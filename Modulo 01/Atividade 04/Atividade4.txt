@@ -1,0 +1,51 @@
+var
+
+nome : caracter
+endereco : caracter
+cidade  : caracter
+cpf : inteiro
+rg : inteiro
+idade : inteiro
+nomePai : caracter
+nomeMae : caracter
+Peso : real
+rendaBruta  : real
+
+inicio
+
+escreva("Escreva o seu nome: ")
+leia(nome)
+escreva("Escreva o seu endereco: ")
+leia(endereco)
+escreva("Escreva a sua cidade: ")
+leia(cidade)
+escreva("Escreva o seu CPF: ")
+leia(cpf)
+escreva("Escreva o seu RG: ")
+leia(rg)
+escreva("Escreva a sua idade: ")
+leia(idade)
+escreva("Escreva o nome do seu pai: ")
+leia(nomePai)
+escreva("Escreva o nome do sua mãe: ")
+leia(nomeMae)
+escreva("Escreva o seu peso atual: ")
+leia(peso)
+escreva("Escreva o sua rendaBruta: ")
+leia(rendaBruta)
+
+
+
+escreva("O seu nome é: ", nome)
+escreva("O seu endereço é: ", endereco)
+escreva("A sua cidade é: ", cidade)
+escreva("O seu CPF é: ", cpf)
+escreva("O seu RG é: ", rg)
+escreva("A sua idade é: ", idade)
+escreva("O nome do seu pai é: ", nomePai)
+escreva("O nome da sua mãe é: ", nomeMae)
+escreva("O seu peso é: ", peso)
+escreva("A renda bruta é: ", rendaBruta)
+
+
+fimalgoritmo
