@@ -1,0 +1,9 @@
+Serão criadas 5 variáveis: duas do tipo "carecter", duas do tipo "inteiro", uma do tipo "real".
+
+No Javascript poderíamos fazer assim:
+
+var nome = "José Almeida da Silva"
+var CPF = 12345678900
+var RG = 9517530
+var Altura = 1.78
+var Endereço = "Rua A, 380 – Centro – Recife/PE"
