@@ -1,0 +1,4 @@
+( V ) JOGADOR 1
+( F ) JOGADOR 2
+( V ) JOGADOR 3
+( V ) JOGADOR 4
