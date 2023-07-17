@@ -1,0 +1,25 @@
+Var
+
+resposta1: caracter
+resposta2: caracter
+
+Inicio
+
+escreva("O Transporte escolhio tem motor? ")
+   leia (resposta1)
+
+   escreva("O transporte escolhido cabe apenas uma pessoa? ")
+   leia (resposta2)
+
+se (resposta1 = "sim") entao
+	se (resposta2 = "sim") entao
+		escreva("O Transporte escolhido foi uma Trator")
+	senao
+		escreva("O Transporte escolhido foi uma Moto")
+	fimse
+fimse
+se(resposta1 = "nao") entao
+	escreva("O Transporte escolhido foi uma Bicicleta")
+fimse
+
+Fimalgoritmo
