@@ -1,0 +1,17 @@
+Var
+
+tabuada, final, contador:inteiro
+
+Inicio
+
+escreva("Qual Tabuada você deseja? ")
+leia(tabuada)
+
+escreva("Até que número você deseja a tabuada? ")
+leia(final)
+
+para contador <- 1 ate final faca
+     escreval(tabuada," x ",contador," = ", tabuada*contador)
+fimpara
+
+Fimalgoritmo
