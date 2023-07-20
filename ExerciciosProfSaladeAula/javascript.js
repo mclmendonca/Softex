@@ -35,3 +35,4 @@ var nota2 = prompt('Digite a segunda nota: ')
 
 var media = (parseInt(nota1) + parseInt(nota2)) / 2
 
+alert('A média de '+nome+' é: '+media+', já que as notas dele foram: '+nota1+' e '+nota2+'. ')
