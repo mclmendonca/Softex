@@ -129,7 +129,7 @@ if (media >= 7 && media<=10) {
 document.write('as maiores notas foram '+notamedia1+' e '+notamedia2+'.')
 */
 
-
+/*
 //8.  Uma organização resolveu dar um aumento de salário aos seus colaboradores e lhe contratam para desenvolver o programa que calculará os 
 //    reajustes. Faça um programa que recebe o salário de um colaborador e o reajuste segundo o seguinte critério, baseado no salário atual:
 //    Salários até R$ 280,00 (incluindo): aumento de 20%
@@ -140,19 +140,102 @@ document.write('as maiores notas foram '+notamedia1+' e '+notamedia2+'.')
 //    O valor do aumento;
 //    O novo salário, após o aumento.
 
-var salario = prompt('Digite o deu salário: ')
+var salario = parseFloat(prompt('Digite o deu salário: '))
+var reajuste
 var aumento
+var novoSalario
 
-if (salario > 1500) {
-    aumento = 5
+
+if (salario >= 1500) {
+    reajuste = '5%'
+    aumento = (salario*0.05)
+    novoSalario = (salario+aumento)
     
+} else if (salario < 1500 && salario >= 700) {
+    reajuste = '10%'
+    aumento = (salario*0.1)
+    novoSalario = (salario+aumento)
+    
+} else if (salario < 700 && salario >= 280) {
+    reajuste = '15%'
+    aumento = (salario*0.15)
+    novoSalario = (salario+aumento)
+    
+} else if (salario < 280) {
+    reajuste = '20%'
+    aumento = (salario*0.2)
+    novoSalario = (salario+aumento)
+   
+}
+document.write('<br>')
+document.write('Você recebeu '+reajuste+' de aumento')
+document.write('<br>')
+document.write('<br>')
+document.write('O Valor do aumento foi: R$ '+aumento+'.')
+document.write('<br>')
+document.write('<br>')
+document.write('Logo, o seu novo salário será: R$ '+novoSalario)
+*/
+
+/*
+//9⦁  Faça um programa para converter uma temperatura dada em graus Fharenheit para Graus Celcius 
+//    segundo a seguinte fórmula: TC = (tf -32)*5/9.
+
+var grausF = parseFloat(prompt('Digite a temperatura ( em graus Fharenheit (°F)): '))
+
+var grausC = ((grausF-32)*5/9)
+
+document.write(`${grausF}°F em graus Celsius é: ${grausC}°C`)
+
+*/
+
+
+/*
+//10⦁  Faça um programa que peça dois números ao usuário e mostre qual o maior e qual o menor.
+
+var numero1 = parseFloat(prompt('Digite o primeiro número: '))
+var numero2 = parseFloat(prompt('Digite o segundo número: '))
+
+if (numero1 > numero2) {
+    document.write(`O primeiro número inserido é o maior: ${numero1}`)
+} else if (numero1<numero2) {
+    document.write(`O segundo número inserido é o maior: ${numero2}`)
+} else{
+    document.write(`Os números inseridos são iguais`)
+}
+
+*/
+
+
+
+//11⦁  Faça um programa para ler o ano de nascimento de uma pessoa e escrever uma mensagem que 
+//     diga se ela poderá ou não votar este ano (não é necessário considerar o mês em que	ela nasceu).
+
+var anoNascimento = parseInt(prompt('qual o ano do nascimento: '))
+var idade = (2023-anoNascimento)
+
+if(idade >= 16 && idade <= 70) {
+    document.write('Pode Votar.')
+} else {
+    document.write('Não pode votar.')
 }
 
 
+//14⦁  Faça um programa que receba três inteiros e diga qual deles é o maior e qual o menor. 
 
-var novoSalario
-var reajuste
-var valorAumento
+
+
+
+
+//13⦁  Faça um programa que recebe um inteiro e diga se é par ou ímpar. 
+
+
+
+
+//14 ⦁  10. Para doar sangue é necessário ter entre 18 e 67 anos. Faça um aplicativo na linguagem C
+//      que pergunte a idade de uma pessoa e diga se ela pode doar sangue ou não. Use alguns dos 
+//      operadores lógicos OU (||) e E (&&).
+
 
 
 
