@@ -86,7 +86,7 @@ alert(usuario+', há '+idadeUsuario+' anos atrás a Dona '+nomeMae+' tinha '+(id
 
 */
 
-
+/*
 //7. Faça um programa que leia as três notas do aluno e calcula a sua média e a sua situação (aprovado por média, prova final ou reprovado 
 //   direto). A média é calculada da seguinte forma: descarta a menor nota e a média é calculada usando as duas maiores notas. A situação do aluno 
 //   depende da sua média e é apresentada na tabela abaixo:
@@ -126,4 +126,33 @@ if (media >= 7 && media<=10) {
     alert('ERRO! Reveja essas notas digitadas') 
 }
 
-document.write(`as maiores notas foram ${notamedia1} e ${notamedia2}.`)
+document.write('as maiores notas foram '+notamedia1+' e '+notamedia2+'.')
+*/
+
+
+//8.  Uma organização resolveu dar um aumento de salário aos seus colaboradores e lhe contratam para desenvolver o programa que calculará os 
+//    reajustes. Faça um programa que recebe o salário de um colaborador e o reajuste segundo o seguinte critério, baseado no salário atual:
+//    Salários até R$ 280,00 (incluindo): aumento de 20%
+//    Salários entre R$ 280,00 e R$ 700,00: aumento de 15%
+//    Salários entre R$ 700,00 e R$ 1500,00: aumento de 10%
+//    Salários de R$ 1500,00 em diante: aumento de 5% Após o aumento ser realizado, informe na tela:
+//    O percentual de aumento aplicado;
+//    O valor do aumento;
+//    O novo salário, após o aumento.
+
+var salario = prompt('Digite o deu salário: ')
+var aumento
+
+if (salario > 1500) {
+    aumento = 5
+    
+}
+
+
+
+var novoSalario
+var reajuste
+var valorAumento
+
+
+
