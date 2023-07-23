@@ -207,7 +207,7 @@ if (numero1 > numero2) {
 */
 
 
-
+/*
 //11⦁  Faça um programa para ler o ano de nascimento de uma pessoa e escrever uma mensagem que 
 //     diga se ela poderá ou não votar este ano (não é necessário considerar o mês em que	ela nasceu).
 
@@ -220,21 +220,75 @@ if(idade >= 16 && idade <= 70) {
     document.write('Não pode votar.')
 }
 
+*/
+
+/*
 
 //14⦁  Faça um programa que receba três inteiros e diga qual deles é o maior e qual o menor. 
 
 
+var nota1 = parseInt(prompt('Digite a primeira nota: '))
+var nota2 = parseInt(prompt('Digite a segunda nota: '))
+var nota3 = parseInt(prompt('Digite a terceira nota: '))
+var maiorNota
+var menorNota
 
 
+if (nota1>=nota2) {
+    if (nota2>=nota3) {
+        maiorNota = nota1
+        menorNota = nota3
+    }else if (nota3>=nota1) {
+        maiorNota = nota3
+        menorNota = nota2
+    }else{
+        maiorNota = nota1
+        menorNota = nota2
+    }
+    
+}else{
+    if (nota1>=nota3) {
+        maiorNota = nota2
+        menorNota = nota3
+    }else if (nota3>=nota2) {
+        maiorNota = nota3
+        menorNota = nota1
+    }else{
+        maiorNota = nota2
+        menorNota = nota1
+    }
+
+
+}
+
+document.write('O Maior número dos 3 informados é: '+maiorNota)
+document.write('<br>')
+document.write('O menor número dos 3 informados é: '+menorNota)
+
+*/
+
+
+/*
 
 //13⦁  Faça um programa que recebe um inteiro e diga se é par ou ímpar. 
 
+var numero = parseInt(prompt('Digite um número: '))
+
+if (numero%2==0) {
+    document.write('Esse número é PAR')
+} else {
+    document.write('Esse número é IMPAR')
+}
+
+*/
 
 
 
 //14 ⦁  10. Para doar sangue é necessário ter entre 18 e 67 anos. Faça um aplicativo na linguagem C
 //      que pergunte a idade de uma pessoa e diga se ela pode doar sangue ou não. Use alguns dos 
 //      operadores lógicos OU (||) e E (&&).
+
+
 
 
 
