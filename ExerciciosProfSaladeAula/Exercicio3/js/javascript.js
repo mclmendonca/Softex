@@ -94,19 +94,31 @@ document.write('O perimetro do círculo é '+periC)
 */
 
 
-
+/*
 //6. Escreva uma função que mostre na tela um número fornecido pelo usuário, porém invertido. Por exemplo, o usuário fornece o número 875 e a função mostra na tela o número 578.
 
-function inverter(numero) {
-    var array = 
+function inverter(number) {
+    var array = number.split('')
+    array.reverse()
+    num = array.join('')
+
+    return num
 }
 
 var numero = prompt('Qual o número? ')
 
+var invertido = inverter(numero)
 
-//7. Escreva uma função que permita contar o número de vogais contidas em uma string fornecida pelo usuário. Por exemplo, o usuário informa a string “Beterraba”, e a função retorna
-// o número 4 (há 4 vogais nessa palavra).
+document.write('O Número '+numero+' invertido é: '+invertido+'.') //652.583
+*/
+
+
+
+//7. Escreva uma função que permita contar o número de vogais contidas em uma string fornecida pelo usuário. Por exemplo, o usuário informa a string 
+//“Beterraba”, e a função retorna o número 4 (há 4 vogais nessa palavra).
 //Obs. Ignore vogais acentuadas, para simplificar.
+
+
 
 
 
