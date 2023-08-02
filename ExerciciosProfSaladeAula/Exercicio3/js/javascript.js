@@ -69,13 +69,36 @@ document.write(' Área do Triângulo é: '+resultado)
 
 //5. Escreva uma função que encontre a área e o perímetro de um círculo, de acordo com o raio fornecido.
 
+function areaCirculo(raio) {
+    
+    areacirc = pi*pi*raio
+    return areacirc
+}
+
+function perimetroCirculo(raio) {
+    
+    perimetro = 2*pi*raio
+    return perimetro
+}
+
+var pi = 3.14
+
+var raio = Number(prompt('Qual o raio ? '))
+
+var areaC = areaCirculo(raio)
+var periC = perimetroCirculo(raio)
+
+document.write('A área do círculo é '+areaC)
+document.write('O perimetro do círculo é '+periC)
+
 
 
 //6. Escreva uma função que mostre na tela um número fornecido pelo usuário, porém invertido. Por exemplo, o usuário fornece o número 875 e a função mostra na tela o número 578.
 
 
 
-//7. Escreva uma função que permita contar o número de vogais contidas em uma string fornecida pelo usuário. Por exemplo, o usuário informa a string “Beterraba”, e a função retorna o número 4 (há 4 vogais nessa palavra).
+//7. Escreva uma função que permita contar o número de vogais contidas em uma string fornecida pelo usuário. Por exemplo, o usuário informa a string “Beterraba”, e a função retorna
+// o número 4 (há 4 vogais nessa palavra).
 //Obs. Ignore vogais acentuadas, para simplificar.
 
 
