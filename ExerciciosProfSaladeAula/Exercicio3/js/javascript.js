@@ -113,7 +113,7 @@ document.write('O Número '+numero+' invertido é: '+invertido+'.') //652.583
 */
 
 
-
+/*
 //7. Escreva uma função que permita contar o número de vogais contidas em uma string fornecida pelo usuário. Por exemplo, o usuário informa a string 
 //“Beterraba”, e a função retorna o número 4 (há 4 vogais nessa palavra).
 //Obs. Ignore vogais acentuadas, para simplificar.
@@ -141,11 +141,12 @@ var contagem = contarVogais(palavra)
 
 document.write('A palavra ' + palavra + ' tem ' + contagem + ' vogais.')
 
+*/
 
 
-
-
-//8. Escreva uma função que informe o retorno de um investimento (montante) com base nos valores do capital inicial, tempo em meses e taxa de juros mensal, fornecidos pelo usuário.
+/*
+//8. Escreva uma função que informe o retorno de um investimento (montante) com base nos valores do capital inicial, tempo em meses e taxa de juros mensal, 
+//fornecidos pelo usuário.
 //Use a fórmula: M = C * (1+i)t
 //Onde:
 //C = Capital inicial investido
@@ -154,14 +155,79 @@ document.write('A palavra ' + palavra + ' tem ' + contagem + ' vogais.')
 //Exiba o resultado com duas casas decimais.
 
 
+function investMais(cap, txJuros, mes) {
+    montante = cap*((txJuros/100)*mes)
 
+    return montante
+}
+
+
+var capital = Number(prompt('Qual o Capital inicial investido: '))
+var taxaJuros = parseInt(prompt('Qual o percetual da taxa de juros( % ): '))
+var tempo = Number(prompt('Qual o tempo de investimento (em meses) ? '))
+
+var resultado = investMais(capital, taxaJuros, tempo)
+
+document.write('O retorno do investimento foi: R$ '+resultado)
+
+*/
+
+
+/*
 //9. Escreva uma função que calcule e retorne o fatorial de um número inteiro fornecido pelo usuário.
 
+function fatorarNumero(numero) {
+    
+    for (let i = numero; i > 1; i--){
+        numero = numero * (i-1)
+    }
+    
+  
+    return numero
+}
+
+var numero = Number(prompt('Digite o número: '))
+
+var resultado = fatorarNumero(numero)
+
+document.write('O fatorial de '+numero+' é :'+resultado+'.')
+
+*/
+
+/*
+//10. Escreva uma função em JavaScript que conte quantas vezes um caractere aparece em uma string. Tanto o caractere quanto a string devem ser fornecidos pelo 
+//usuário.
+
+function contarPalavras(palavra,letra) {
+    var minusculas = palavra.toLowerCase()
+    var array = minusculas.split('')
+    contador = 0
+
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] == letra) {
+            contador++
+        }
+        
+    }
+    return contador
+}
 
 
-//10. Escreva uma função em JavaScript que conte quantas vezes um caractere aparece em uma string. Tanto o caractere quanto a string devem ser fornecidos pelo usuário.
+var palavra = prompt('Digite a palavra')
+var letra = prompt('Digite qual letra você quer que contemos? ')
 
+var resultado = contarPalavras(palavra,letra)
+
+document.write('O número de "'+letra+'" dentro da palavra '+palavra+' é :'+resultado)
+*/
 
 
 //11. Escreva uma função que verifica se um número fornecido pelo usuário em um prompt é primo ou não.
 
+function ePrimo(numero) {
+    
+}
+
+var numero = Number(prompt('Digite um número: '))
+
+var resultado = ePrimo(numero)
