@@ -118,6 +118,29 @@ document.write('O Número '+numero+' invertido é: '+invertido+'.') //652.583
 //“Beterraba”, e a função retorna o número 4 (há 4 vogais nessa palavra).
 //Obs. Ignore vogais acentuadas, para simplificar.
 
+function contarVogais(letras) {
+    var minusculas = letras.toLowerCase()
+    var array = minusculas.split('')
+    var num = 0
+
+    for (let i = 0; i < array.length; i++) {
+        
+        if (array[i] == 'a' || array[i] == 'e' || array[i] == 'i' || array[i] == 'o' || array[i] == 'u') {
+            num++
+        }
+
+    }
+
+    return num
+
+}
+
+var palavra = prompt('Qual a palavra? ')
+
+var contagem = contarVogais(palavra)
+
+document.write('A palavra ' + palavra + ' tem ' + contagem + ' vogais.')
+
 
 
 
