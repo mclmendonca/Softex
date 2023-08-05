@@ -221,13 +221,28 @@ var resultado = contarPalavras(palavra,letra)
 document.write('O número de "'+letra+'" dentro da palavra '+palavra+' é :'+resultado)
 */
 
+/*
 
 //11. Escreva uma função que verifica se um número fornecido pelo usuário em um prompt é primo ou não.
 
 function ePrimo(numero) {
-    
+    let sum = 0
+    for (let i = numero; i > 0; i--) {
+        if (numero%i==0) {
+            sum++
+        }
+    }
+    return sum
 }
 
 var numero = Number(prompt('Digite um número: '))
 
 var resultado = ePrimo(numero)
+
+if (resultado > 2 ) {
+    document.write(numero+', esse numero não é primo')
+} else {
+    document.write(numero+', esse numero é primo')
+}
+
+*/
