@@ -16,38 +16,38 @@ também, a quantidade de votos de cada candidato, os brancos e nulos.
 
 function votar(cand1, cand2, cand3, branco, nulo) {
 
-    var voto = prompt('======== ||| Eleições ||| ========\rDigite 1 para votar em ' + cand1.nome + '\rDigite 2 para votar em ' + cand2.nome + '\rDigite 3 para votar em ' + cand3.nome + '\rDigite 0 para votar em ' + branco.nome)
+    var voto = parseInt(prompt('======== ||| Eleições ||| ========\rDigite 1 para votar em ' + cand1.nome + '\rDigite 2 para votar em ' + cand2.nome + '\rDigite 3 para votar em ' + cand3.nome + '\rDigite 0 para votar em ' + branco.nome))
 
 
     switch (voto) {
-        case '1':
+        case 1:
             voto = prompt('Você votou em ' + cand1.nome + '. Tem certeza que deseja confirmar o voto? ( ( 1 ) Confirmar. ( 0 ) Corrige ): ')
 
-            while (voto != '1' && voto != '0') {
+            while (voto != 1 && voto != 0) {
                 window.alert('Voce digitou uma opção inválida. Favor digitar ( 1 ) para CONFIRMAR ou ( 0 ) para corrigir.')
                 voto = prompt('Você votou em ' + cand1.nome + '. Tem certeza que deseja confirmar o voto? ( ( 1 ) Confirmar. ( 0 ) Corrige ): ')
             }
 
-            if (voto == '0') {
+            if (voto == 0) {
                 votar(candidato1, candidato2, candidato3, branco, nulo)
-            } else if (voto == '1') {
+            } else if (voto == 1) {
                 cand1.voto++
             }
 
             break;
 
-        case '2':
+        case 2:
             voto = prompt('Você votou em ' + cand2.nome + '. Tem certeza que deseja confirmar o voto? ( ( 1 ) Confirmar. ( 0 ) Corrige ): ')
 
-            while (voto != '1' && voto != '0') {
+            while (voto != 1 && voto != 0) {
                 window.alert('Voce digitou uma opção inválida. Favor digitar ( 1 ) para CONFIRMAR ou ( 0 ) para corrigir.')
                 voto = prompt('Você votou em ' + cand1.nome + '. Tem certeza que deseja confirmar o voto? ( ( 1 ) Confirmar. ( 0 ) Corrige ): ')
             }
 
 
-            if (voto == '0') {
+            if (voto == 0) {
                 votar(candidato1, candidato2, candidato3, branco, nulo)
-            } else if (voto == '1') {
+            } else if (voto == 1) {
                 cand2.voto++
 
             }
@@ -55,19 +55,19 @@ function votar(cand1, cand2, cand3, branco, nulo) {
             break;
 
 
-        case '3':
+        case 3:
             voto = prompt('Você votou em ' + cand3.nome + '. Tem certeza que deseja confirmar o voto? ( ( 1 ) Confirmar. ( 0 ) Corrige ): ')
 
-            while (voto != '1' && voto != '0') {
+            while (voto != 1 && voto != 0) {
                 window.alert('Voce digitou uma opção inválida. Favor digitar ( 1 ) para CONFIRMAR ou ( 0 ) para corrigir.')
                 voto = prompt('Você votou em ' + cand1.nome + '. Tem certeza que deseja confirmar o voto? ( ( 1 ) Confirmar. ( 0 ) Corrige ): ')
             }
 
 
 
-            if (voto == '0') {
+            if (voto == 0) {
                 votar(candidato1, candidato2, candidato3, branco, nulo)
-            } else if (voto == '1') {
+            } else if (voto == 1) {
                 cand3.voto++
 
             }
@@ -75,19 +75,19 @@ function votar(cand1, cand2, cand3, branco, nulo) {
             break;
 
 
-        case '0':
+        case 0:
             voto = prompt('Você votou em ' + branco.nome + '. Tem certeza que deseja confirmar o voto? (( 1 ) Confirmar. ( 0 ) Corrige ): ')
 
-            while (voto != '1' && voto != '0') {
+            while (voto != 1 && voto != 0) {
                 window.alert('Voce digitou uma opção inválida. Favor digitar ( 1 ) para CONFIRMAR ou ( 0 ) para corrigir.')
                 voto = prompt('Você votou em ' + cand1.nome + '. Tem certeza que deseja confirmar o voto? ( ( 1 ) Confirmar. ( 0 ) Corrige ): ')
             }
 
 
 
-            if (voto == '0') {
+            if (voto == 0) {
                 votar(candidato1, candidato2, candidato3, branco, nulo)
-            } else if (voto == '1') {
+            } else if (voto == 1) {
                 branco.voto++
 
             }
@@ -96,18 +96,15 @@ function votar(cand1, cand2, cand3, branco, nulo) {
 
 
         case '':
-            voto = prompt('Você votou em ' + nulo.nome + '. Tem certeza que deseja confirmar o voto? ( ( 1 ) Confirmar. ( 0 ) Corrige ): ')
-
-            while (voto != '1' && voto != '0') {
+            while (voto != 1 && voto != 0) {
                 window.alert('Voce digitou uma opção inválida. Favor digitar ( 1 ) para CONFIRMAR ou ( 0 ) para corrigir.')
                 voto = prompt('Você votou em ' + cand1.nome + '. Tem certeza que deseja confirmar o voto? ( ( 1 ) Confirmar. ( 0 ) Corrige ): ')
             }
 
 
-
-            if (voto == '0') {
+            if (voto == 0) {
                 votar(candidato1, candidato2, candidato3, branco, nulo)
-            } else if (voto == '1') {
+            } else if (voto == 1) {
                 nulo.voto++
 
             }
@@ -116,12 +113,25 @@ function votar(cand1, cand2, cand3, branco, nulo) {
 
         default:
 
-            window.alert('Você digitou um numero/texto inválido, favor escolher a opção numérica correta: ')
+            voto = prompt('Você votou em ' + nulo.nome + '. Tem certeza que deseja confirmar o voto? ( ( 1 ) Confirmar. ( 0 ) Corrige ): ')
+
+            while (voto != 1 && voto != 0) {
+                window.alert('Voce digitou uma opção inválida. Favor digitar ( 1 ) para CONFIRMAR ou ( 0 ) para corrigir.')
+                voto = prompt('Você votou em ' + cand1.nome + '. Tem certeza que deseja confirmar o voto? ( ( 1 ) Confirmar. ( 0 ) Corrige ): ')
+            }
+
+            if (voto == 0) {
+                votar(candidato1, candidato2, candidato3, branco, nulo)
+            } else if (voto == 1) {
+                nulo.voto++
+
+            }
+
             votar(candidato1, candidato2, candidato3, branco, nulo)
             break;
     }
 
-    let acabar = prompt('Acabou a votação?\r ( 1 ) - Não, ainda teremos mais votação.\r ( 2 ) - Sim, vamos aos resultados da eleição')
+    let acabar = prompt('Deseja finalizar a votação ?\r ( 1 ) - Não, ainda teremos mais votação.\r ( 2 ) - Sim, vamos aos resultados.')
     while (acabar != '1' && acabar != '2') {
         window.alert('Voce digitou uma opção inválida. Favor digitar ( 1 ) para NÃO ou ( 2 ) para SIM.')
         acabar = prompt('Acabou a votação?\r ( 1 ) - Não, ainda teremos mais votação.\r ( 2 ) - Sim, vamos aos resultados da eleição')
