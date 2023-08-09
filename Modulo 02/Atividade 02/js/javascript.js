@@ -13,192 +13,61 @@ Quando a votação for finalizada, o código deverá mostrar o vencedor, aquele 
 também, a quantidade de votos de cada candidato, os brancos e nulos. 
 */
 
-
-function votar(cand1, cand2, cand3, branco, nulo) {
-
-    var voto = parseInt(prompt('======== ||| Eleições ||| ========\rDigite 1 para votar em ' + cand1.nome + '\rDigite 2 para votar em ' + cand2.nome + '\rDigite 3 para votar em ' + cand3.nome + '\rDigite 0 para votar em ' + branco.nome))
-
-    if (typeof voto == "string") {
-
-        window.alert('Voce digitou uma opção inválida. Favor tente novamente.')
-        votar(candidato1, candidato2, candidato3, branco, nulo)
-
-    }
+let candidato1Votos = 0
+let candidato2Votos = 0
+let candidato3Votos = 0
+let candidato4Votos = 0
+let votosNulos = 0
 
 
+function obterVotoValido() {
+  let opcao = prompt("Digite o número do candidato a ser votado:\n (13) para Luisinho\n (22) para Jairinho\n (15) para Moninha\n (0) para Branco\n ou 'F' para finalizar:")
+  opcao = opcao.trim().toLowerCase()
 
-
-    switch (voto) {
-        case 1:
-            voto = prompt('Você votou em ' + cand1.nome + '. Tem certeza que deseja confirmar o voto? ( ( 1 ) Confirmar. ( 0 ) Corrige ): ')
-
-            while (voto != 1 && voto != 0) {
-                window.alert('Voce digitou uma opção inválida. Favor digitar ( 1 ) para CONFIRMAR ou ( 0 ) para corrigir.')
-                voto = prompt('Você votou em ' + cand1.nome + '. Tem certeza que deseja confirmar o voto? ( ( 1 ) Confirmar. ( 0 ) Corrige ): ')
-            }
-
-            if (voto == 0) {
-                votar(candidato1, candidato2, candidato3, branco, nulo)
-            } else if (voto == 1) {
-                cand1.voto++
-            }
-
-            break;
-
-        case 2:
-            voto = prompt('Você votou em ' + cand2.nome + '. Tem certeza que deseja confirmar o voto? ( ( 1 ) Confirmar. ( 0 ) Corrige ): ')
-
-            while (voto != 1 && voto != 0) {
-                window.alert('Voce digitou uma opção inválida. Favor digitar ( 1 ) para CONFIRMAR ou ( 0 ) para corrigir.')
-                voto = prompt('Você votou em ' + cand2.nome + '. Tem certeza que deseja confirmar o voto? ( ( 1 ) Confirmar. ( 0 ) Corrige ): ')
-            }
-
-
-            if (voto == 0) {
-                votar(candidato1, candidato2, candidato3, branco, nulo)
-            } else if (voto == 1) {
-                cand2.voto++
-
-            }
-
-            break;
-
-
-        case 3:
-            voto = prompt('Você votou em ' + cand3.nome + '. Tem certeza que deseja confirmar o voto? ( ( 1 ) Confirmar. ( 0 ) Corrige ): ')
-
-            while (voto != 1 && voto != 0) {
-                window.alert('Voce digitou uma opção inválida. Favor digitar ( 1 ) para CONFIRMAR ou ( 0 ) para corrigir.')
-                voto = prompt('Você votou em ' + cand3.nome + '. Tem certeza que deseja confirmar o voto? ( ( 1 ) Confirmar. ( 0 ) Corrige ): ')
-            }
-
-
-
-            if (voto == 0) {
-                votar(candidato1, candidato2, candidato3, branco, nulo)
-            } else if (voto == 1) {
-                cand3.voto++
-
-            }
-
-            break;
-
-
-        case 0:
-            voto = prompt('Você votou em ' + branco.nome + '. Tem certeza que deseja confirmar o voto? (( 1 ) Confirmar. ( 0 ) Corrige ): ')
-
-            while (voto != 1 && voto != 0) {
-                window.alert('Voce digitou uma opção inválida. Favor digitar ( 1 ) para CONFIRMAR ou ( 0 ) para corrigir.')
-                voto = prompt('Você votou em ' + branco.nome + '. Tem certeza que deseja confirmar o voto? ( ( 1 ) Confirmar. ( 0 ) Corrige ): ')
-            }
-
-
-
-            if (voto == 0) {
-                votar(candidato1, candidato2, candidato3, branco, nulo)
-            } else if (voto == 1) {
-                branco.voto++
-
-            }
-
-            break;
-
-
-        default:
-
-            voto = prompt('Você votou em ' + nulo.nome + '. Tem certeza que deseja confirmar o voto? (( 1 ) Confirmar. ( 0 ) Corrige ): ')
-
-            while (voto != 1 && voto != 0) {
-                window.alert('Voce digitou uma opção inválida. Favor digitar ( 1 ) para CONFIRMAR ou ( 0 ) para corrigir.')
-                voto = prompt('Você votou em ' + nulo.nome + '. Tem certeza que deseja confirmar o voto? ( ( 1 ) Confirmar. ( 0 ) Corrige ): ')
-            }
-
-            if (voto == 0) {
-                votar(candidato1, candidato2, candidato3, branco, nulo)
-            } else if (voto == 1) {
-                nulo.voto++
-
-            }
-
-
-            break;
-    }
-
-    var acabar = parseInt(prompt('Deseja finalizar a votação ?\r ( 1 ) - Não, ainda teremos mais votação.\r ( 2 ) - Sim, vamos aos resultados.'))
-    while (acabar != 1 && acabar != 2) {
-        window.alert('Voce digitou uma opção inválida. Favor digitar ( 1 ) para NÃO ou ( 2 ) para SIM.')
-        acabar = parseInt(prompt('Deseja finalizar a votação ?\r ( 1 ) - Não, ainda teremos mais votação.\r ( 2 ) - Sim, vamos aos resultados.'))
-    }
-
-    if (acabar == 1) {
-        votar(candidato1, candidato2, candidato3, branco, nulo)
-    } else if (acabar == 2) {
-        return
-    }
-
-
-
+  if (opcao === 'f') {
+    return 'f'
+  } else if (opcao === '13' || opcao === '22' || opcao === '15' || opcao === '0') {
+    return parseInt(opcao)
+  } else if (opcao == null || opcao.length == 0 || !isNaN(opcao)) {
+    return 'nulo'
+  }
+  else {
+    window.alert('Você digitou uma opção inválida. favor escolher um dos candidatos disponíveis o aperte a opção do branco.')
+  }
 }
 
 
+while (true) {
+  let voto = obterVotoValido()
 
-
-
-
-var candidato1 = { nome: 'Luisinho', voto: 0 }
-var candidato2 = { nome: 'Jairinho', voto: 0 }
-var candidato3 = { nome: 'Moninha', voto: 0 }
-var branco = { nome: 'Branco', voto: 0 }
-var nulo = { nome: 'Nulo', voto: 0 }
-
-
-var resultado = votar(candidato1, candidato2, candidato3, branco, nulo)
-
-
-
-document.write('Resultado Final das Eleiões: <br>')
-document.write('Posição<tab>Candidato<tab>Votos <br>')
-if (candidato1.voto >= candidato2.voto && candidato1.voto >= candidato3.voto) {
-    if (candidato2.voto >= candidato3.voto) {
-        document.write('<br>1º          ' + candidato1.nome + '   votos: ' + candidato1.voto)
-        document.write('<br>2º          ' + candidato2.nome + '   votos: ' + candidato2.voto)
-        document.write('<br>3º          ' + candidato3.nome + '   votos: ' + candidato3.voto)
-    } else {
-        document.write('<br>1º          ' + candidato1.nome + '   votos: ' + candidato1.voto)
-        document.write('<br>2º          ' + candidato3.nome + '   votos: ' + candidato3.voto)
-        document.write('<br>3º          ' + candidato2.nome + '   votos: ' + candidato2.voto)
-    }
-
-} else if (candidato2.voto >= candidato1.voto && candidato2.voto >= candidato3.voto) {
-    if (candidato1.voto >= candidato3.voto) {
-        document.write('<br>1º          ' + candidato2.nome + '   votos: ' + candidato2.voto)
-        document.write('<br>2º          ' + candidato1.nome + '   votos: ' + candidato1.voto)
-        document.write('<br>3º          ' + candidato3.nome + '   votos: ' + candidato3.voto)
-    } else {
-        document.write('<br>1º          ' + candidato2.nome + '   votos: ' + candidato2.voto)
-        document.write('<br>2º          ' + candidato3.nome + '   votos: ' + candidato3.voto)
-        document.write('<br>3º          ' + candidato1.nome + '   votos: ' + candidato1.voto)
-    }
-
-} else if (candidato3.voto >= candidato1.voto && candidato3.voto >= candidato2.voto) {
-    if (candidato1.voto >= candidato2.voto) {
-        document.write('<br>1º          ' + candidato3.nome + '   votos: ' + candidato3.voto)
-        document.write('<br>2º          ' + candidato1.nome + '   votos: ' + candidato1.voto)
-        document.write('<br>3º          ' + candidato2.nome + '   votos: ' + candidato2.voto)
-    } else {
-        document.write('<br>1º          ' + candidato3.nome + '   votos: ' + candidato3.voto)
-        document.write('<br>2º          ' + candidato2.nome + '   votos: ' + candidato2.voto)
-        document.write('<br>3º          ' + candidato1.nome + '   votos: ' + candidato1.voto)
-    }
-
+  if (voto === 'f') {
+    break
+  } else if (voto === 'nulo') {
+    votosNulos++
+  } else if (voto === 13) {
+    candidato1Votos++
+  } else if (voto === 22) {
+    candidato2Votos++
+  } else if (voto === 15) {
+    candidato3Votos++
+  } else if (voto === 0) {
+    candidato4Votos++
+  }
 }
 
 
-document.write('<br>          ' + branco.nome + '   votos: ' + branco.voto)
-document.write('<br>          ' + nulo.nome + '   votos: ' + nulo.voto)
+const candidatos = [
+  { nome: 'Luisinho   ', votos: candidato1Votos },
+  { nome: 'Jairinho   ', votos: candidato2Votos },
+  { nome: 'Moninha    ', votos: candidato3Votos }
+]
 
+candidatos.sort((a, b) => b.votos - a.votos)
 
+console.log("\nClassificação final:")
+candidatos.forEach((candidato, index) => {
+  console.log(`${index + 1}. ${candidato.nome} => ${candidato.votos} votos`)
 
-
-
-
+})
+console.log(`Total de votos branco: ${candidato4Votos}`)
+console.log(`Total de votos nulos: ${votosNulos}`)
