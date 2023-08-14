@@ -11,9 +11,8 @@ matriz.forEach(row => {
 })
 })
 */
-try {
-    
-let media = 0
+
+
 let notas = [
 
     [5.5, 7.9, 7.1],  //Notas de José
@@ -22,20 +21,47 @@ let notas = [
 
 ]
 
+
+let mediaAlunos = []
+let mediaNotas = []
+let coluna1 = 0
+let coluna2 = 0
+let coluna3 = 0
+
+
 for (let i = 0; i < notas.length; i++) {
-    for (let j = 0; j < notas.length; j++) {
-        media = (media + notas[i][j])
-       
-
-
+    let soma = 0
+    let = media = 0
+    for (let j = 0; j < notas[i].length; j++) {
+        soma += notas[i][j] 
+        
+        if (j == 0) {
+            coluna1 += notas[i][j]
+        } else if (j == 1) {
+            coluna2 += notas[i][j]
+        }else if (j == 2) {
+            coluna3 += notas[i][j]
+        }
     }
-
-    notas.push(media)
+    media = soma/3
+    mediaAlunos.push(media)
 }
 
-console.log(notas)
+coluna1 = coluna1/3
+mediaNotas.push(coluna1)
+coluna2 = coluna2/3
+mediaNotas.push(coluna2)
+coluna3 = coluna3/3
+mediaNotas.push(coluna3)
 
-} catch (error) {
-    console.log(Error.message)
-}
+
+
+
+
+
+console.log('A média dos alunos é: '+mediaAlunos)
+console.log('A média das notas é:  '+mediaNotas)
+
+
+
 
