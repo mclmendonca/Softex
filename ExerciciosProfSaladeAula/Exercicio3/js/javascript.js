@@ -246,3 +246,23 @@ if (resultado > 2 ) {
 }
 
 */
+
+/*
+const lista = []
+
+function inserir(item, posicao = lista.length) {
+    if (posicao >= 0 && posicao <= lista.length) {
+        lista.splice(posicao, 0, item)
+        return true
+    } else {
+        return false
+    }
+}
+
+
+inserir(20, 1)
+//inserir(30, 0)
+inserir(50)
+console.log(lista)
+*/
+
