@@ -73,17 +73,31 @@ class ListaLigada{
     }
 
     //busca (search)
-    procura(){
-
+    procura(nome){
+        let atual = this.cabeca
+        while (atual) {
+            if (atual.nome == nome) {
+                return atual
+            }
+            atual = atual.proximo
+        }
+        return null
     }
 
     //tamanho da lista
     tamanho(){
-
+        let contagem = 0
+        let atual = this.cabeca
+        while (atual) {
+            contagem++
+            atual = atual.proximo
+        }
+        return contagem
     }
 
     //exibir a lista
     imprimeLista(){
+        
 
     }
 
