@@ -53,6 +53,22 @@ class ListaLigada{
     
     //remove no fim
     removeUltimo(){
+        if(!this.cabeca){
+            return null
+        }
+        if (!this.cabeca.proximo) {
+            const removeNo = this.cabeca
+            this.cabeca = null
+            return removeNo.nome
+        }
+        let atual = this.cabeca
+        let anterior = null
+        while (atual.proximo) {
+            anterior = atual
+            atual = atual.proximo
+        }
+        anterior.proximo = null;
+        return atual.nome
 
     }
 
