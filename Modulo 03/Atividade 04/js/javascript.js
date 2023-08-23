@@ -19,16 +19,16 @@ class ListaLigada{
     }
 
     //insere no Inicio
-    addPrimeiro(nome){
-        const novoNo = new No(nome)
+    addPrimeiro(nome, idade){
+        const novoNo = new No(nome, idade)
         novoNo.proximo = this.cabeca
         this.cabeca = novoNo
 
     }
 
     //Insere no fim
-    addUltimo(nome){
-        const novoNo = new No(nome)
+    addUltimo(nome, idade){
+        const novoNo = new No(nome, idade)
         if (!this.cabeca) {
             this.cabeca = novoNo            
         } else {
@@ -97,8 +97,20 @@ class ListaLigada{
 
     //exibir a lista
     imprimeLista(){
-        
-
+        let atual = this.cabeca
+        let nomes = []
+        while (atual != null) {
+            nomes.push(atual.nome)
+            atual = atual.proximo            
+        }
+        return nomes
     }
 
 }
+
+const lista = new ListaLigada()
+lista.addPrimeiro('Vovó Nice', 74)
+lista.addUltimo('Mãe Edna', 58)
+lista.addUltimo('Filho Marcelo', 27)
+console.log(lista.imprimeLista())
+
