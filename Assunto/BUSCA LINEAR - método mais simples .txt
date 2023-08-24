@@ -1,0 +1,26 @@
+BUSCA LINEAR - método mais simples de busca. os elemenos são percorridos sequencialmente até o valor procurado seja encontrado ou a busca termine. Ele é útil quando a coleção de dados não está ordenada ou quando não se sabe a posição exata do elemento procurado. No pior caso, a busca linear tem uma complexidade de tempo 0(n), sendo "n" o número de elementos numa coleção.
+
+conceitos:
+
+1- COLEÇÃO DE DADOS: estrutura que contém os itens q serão pesquisados. Pode ser um array, uma lista ou qq outra q possibilita o acesso sequencial aos seus itens.
+
+2- ELEMENTO BUSCADO: É o valor que desejamos encontrar na coleção de dados.
+ 
+3- PERCORRER COLEÇÃO: É analisar cada item da coleção até q o buscado seja encontrado. 
+
+4- COMPLEXIDADE DE TEMPO: No pior caso, a busca linear precisa percorrer todos os itens da coleção. Portanto, a sua complexidade de tempo é O(n), sendo "n" o número de elementos na coleção.
+
+
+
+
+
+
+BUSCA BINÁRIA - método mais eficiente p aplicar em coleções ordenadas. A sua estratégia consiste em dividir, repetidamente, a coleção ao meio, descartando metade dos elementos a cada passo até que o valor seja encontrado.  
+
+A busca binária tem uma complexidade de tempo O(log n), que é consideravelmente mais rápida do que a busca linear, especialmente em coleções grandes.
+
+1- COLEÃO ORDENADA DE DADOS: A busca binária exige q a coleção de dados esteja ordenada, seja em ordem crescente ou decrescente. Caso contrário, não será possível aplicar a estratégia de descarte da metade da coleção.
+
+2- DIVISÃO RESURSIVA: O algoritmo divide, repetidamente, a coleção ao meio, comparando o valor buscado c/ o do meio da coleção. Dependendo da comparação, o algoritmo prossegue com a busca na metade esquerda ou direita da coleção.
+
+3- COMPLEXIDADE DE TEMPO: A complexidade d tempo da busca binária é O(log n), sendo "n" o número d elementos na coleção. Isso significa que a busca binária é muito mais rápida em coleções grandes do que a busca linear O(n), tornando-a uma opção muito eficiente.
