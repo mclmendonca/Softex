@@ -63,11 +63,23 @@ console.log(`${descricaoSexo}, com ${altura} metros de altura tem o peso ideal: 
 */
 
 
+
+//⦁	Faça um algoritmo que leia o nome e a idade de uma nadador e escreva a categoria a qual pertence de acordo com a tabela abaixo:
+//cat         idade
+//Infantil A     5 -  7
+//Infantil B     8 - 10
+//Juvenil  A    11 - 13
+//Juvenil  B    14 - 17
+//Senior       Maior 18
+
+
+
+
+
+
+
+
 /*
-⦁	Faça um algoritmo que leia o nome e a idade de uma nadador e escreva a categoria a qual pertence de acordo com a tabela abaixo:
-
- 
-
 ⦁	Faça um algoritmo que calcule a soma dos 10 primeiros números inteiros e escreva o valor da soma.
 
 ⦁	Faça um algoritmo que leia um conjunto de números até que seja digitado o valor 999. No final escreva a soma e a média dos números lidos. 
