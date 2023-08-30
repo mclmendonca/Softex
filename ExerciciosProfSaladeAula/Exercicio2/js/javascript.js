@@ -147,8 +147,25 @@ for (let i = 0; i < 8; i++) {
 
 
 //⦁	Faça um algoritmo que leia dois conjuntos com 20 números reais cada (A e B) e monte um conjunto C, onde cada elemento de C é a subtração do elemento correspondente de A com B.
+let conjuntoA = []
+let conjuntoB = []
+let conjuntoC = []
 
+for (let i = 0; i < 20; i++) {
+    conjuntoA[i] = parseInt(prompt(`Qual o ${i + 1}° item do Conjunto A que vai até 20 numeros.`))
 
+}
+window.alert('Você terminou o Conjunto A, vamos começar o Cnjunto B? ')
+for (let i = 0; i < 20; i++) {
+    conjuntoB[i] = parseInt(prompt(`Qual o ${i + 1}° item do Conjunto B que vai até 20 numeros.`))
+    conjuntoC[i] = conjuntoA[i] - conjuntoB[i]
+}
+
+document.write('Com esses dados coletados, podemos dizer que os numeros que compõe o conjunto C são: <br>')
+for (let i = 0; i < 20; i++) {
+    conjuntoC[i] = (conjuntoA[i] - conjuntoB[i])
+    document.write(conjuntoC[i]+'<br>')
+}
 
 
 /*
