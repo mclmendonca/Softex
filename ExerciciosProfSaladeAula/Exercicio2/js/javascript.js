@@ -63,7 +63,7 @@ console.log(`${descricaoSexo}, com ${altura} metros de altura tem o peso ideal: 
 */
 
 
-
+/*
 //⦁	Faça um algoritmo que leia o nome e a idade de uma nadador e escreva a categoria a qual pertence de acordo com a tabela abaixo:
 //cat         idade
 //Infantil A     5 -  7
@@ -72,22 +72,86 @@ console.log(`${descricaoSexo}, com ${altura} metros de altura tem o peso ideal: 
 //Juvenil  B    14 - 17
 //Senior       Maior 18
 
+const nome = prompt('Qual o nome do nadador: ')
+const idade = prompt('Qual a idade do nadador: ')
 
-
+if (idade >= 18) {
+    document.write(`O nadador ${nome} que tem ${idade} anos e pertence a categoria Sênior`)
+} else if (idade < 18 && idade >= 14) {
+    document.write(`O nadador ${nome} que tem ${idade} anos e pertence a categoria Juvenil B`)
+} else if (idade < 14 && idade >= 11) {
+    document.write(`O nadador ${nome} que tem ${idade} anos e pertence a categoria Juvenil A`)
+} else if(idade < 11 && idade >= 8) {
+    document.write(`O nadador ${nome} que tem ${idade} anos e pertence a categoria Infantil B`)
+} else if(idade < 8 && idade >= 5) {
+    document.write(`O nadador ${nome} que tem ${idade} anos e pertence a categoria Infantil A`)
+}else {
+    document.write(`As categorias são válidas para pessoas acima de 5 anos. por favor digite uma idade válida.`)
+}
+*/
 
 
 
 
 
 /*
-⦁	Faça um algoritmo que calcule a soma dos 10 primeiros números inteiros e escreva o valor da soma.
+//⦁	Faça um algoritmo que calcule a soma dos 10 primeiros números inteiros e escreva o valor da soma.
+let soma = 0
+for (let i = 1; i <= 10; i++) {
+    soma += i
+    
+}
+console.log('A soma dos 10 primeiros inteiros é :'+soma)
+*/
 
-⦁	Faça um algoritmo que leia um conjunto de números até que seja digitado o valor 999. No final escreva a soma e a média dos números lidos. 
+/*
+//⦁	Faça um algoritmo que leia um conjunto de números até que seja digitado o valor 999. No final escreva a soma e a média dos números lidos. 
 
-⦁	Faça um algoritmo que leia um conjunto A de 8 números inteiros e gere em um conjunto B com o mesmo tamanho, com todos os elementos do conjunto A multiplicados por 4. Apresente o conjunto B.
+let numero = 0
+let soma = 0
+let cont = 0
+let media
 
-⦁	Faça um algoritmo que leia dois conjuntos com 20 números reais cada (A e B) e monte um conjunto C, onde cada elemento de C é a subtração do elemento correspondente de A com B.
+do {
+        
+    if (!isNaN(numero)) {
+        soma += numero
+        cont++    
+    }
+    
+    numero = parseInt(prompt('Qual o número: '))
 
+} while (numero != 999);
+
+media = soma/cont
+
+console.log(`Total da soma foi: ${soma}, foram digitados ${cont} numeros e a média é: ${media}`)
+*/
+
+/*
+//⦁	Faça um algoritmo que leia um conjunto A de 8 números inteiros e gere em um conjunto B com o mesmo tamanho, com todos os elementos do conjunto A multiplicados por 4. Apresente o conjunto B.
+let conjuntoA = []
+let conjuntoB = []
+for (let i = 0; i < 8; i++) {
+    conjuntoA[i] = parseFloat(prompt(`Qual o ${i+1}° item de 8 numeros do conjunto A: `))
+    conjuntoB[i] = (conjuntoA[i]*4)
+}
+
+console.log('Com os números digitados no conjunto A, o conjunto B fica assim:')
+for (let i = 0; i < 8; i++) {
+    console.log(conjuntoB[i])
+    
+}
+*/
+
+
+
+//⦁	Faça um algoritmo que leia dois conjuntos com 20 números reais cada (A e B) e monte um conjunto C, onde cada elemento de C é a subtração do elemento correspondente de A com B.
+
+
+
+
+/*
 ⦁	Escreva um algoritmo para ler o nome e a idade de uma pessoa, e exibir quantos dias de vida ela possui. Considere sempre anos completos, e que um ano possui 365 dias.
 
 ⦁	Um motorista deseja colocar no seu tanque X litros de gasolina. Escreva um algoritmo para ler o preço do litro da gasolina e o valor do pagamento, e exibir quantos litros ele conseguiu colocar no tanque. 
