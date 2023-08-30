@@ -1,5 +1,5 @@
 /*
-//⦁	Faça um algoritmo que leia o espaço percorrido por um automóvel (em metros), o tempo gasto para percorrê-lo (em segundos), e escreva a velocidade utilizada (V=S/T). 
+//⦁	Faça um algoritmo que leia o espaço percorrido por um automóvel (em metros), o tempo gasto para percorrê-lo (em segundos), e escreva a velocidade utilizada (V=S/T).
 
 function calcularValocidade(espaco,tempo) {
     let velocidade = espaco/tempo
@@ -8,12 +8,12 @@ function calcularValocidade(espaco,tempo) {
 
 let espaco
 do {
-    espaco = parseFloat(prompt('Qual o espaço percorrido (em metros): '))    
+    espaco = parseFloat(prompt('Qual o espaço percorrido (em metros): '))
 } while (isNaN(espaco));
 
 let tempo
 do {
-    tempo = parseFloat(prompt('qual o tempo para percorrer (em segundos): '))    
+    tempo = parseFloat(prompt('qual o tempo para percorrer (em segundos): '))
 } while (isNaN(tempo));
 
 let velocidade = calcularValocidade()
@@ -22,9 +22,9 @@ console.log(`A velocidade percorrida é de : ${velocidade} M/s.`)
 */
 
 /*
-//⦁	Calcule o peso ideal de uma pessoa, baseado em sua altura (h). Sabendo: 
-//⦁	Para homens: peso ideal = (72.7 * h) - 58 
-//⦁	Para mulheres: peso ideal = (62.1 * h) – 44.7 
+//⦁	Calcule o peso ideal de uma pessoa, baseado em sua altura (h). Sabendo:
+//⦁	Para homens: peso ideal = (72.7 * h) - 58
+//⦁	Para mulheres: peso ideal = (62.1 * h) – 44.7
 
 function calculo(parametro, altura, numero) {
     let pesoIdeal = (parametro * altura) - numero
@@ -99,13 +99,13 @@ if (idade >= 18) {
 let soma = 0
 for (let i = 1; i <= 10; i++) {
     soma += i
-    
+
 }
 console.log('A soma dos 10 primeiros inteiros é :'+soma)
 */
 
 /*
-//⦁	Faça um algoritmo que leia um conjunto de números até que seja digitado o valor 999. No final escreva a soma e a média dos números lidos. 
+//⦁	Faça um algoritmo que leia um conjunto de números até que seja digitado o valor 999. No final escreva a soma e a média dos números lidos.
 
 let numero = 0
 let soma = 0
@@ -113,12 +113,12 @@ let cont = 0
 let media
 
 do {
-        
+
     if (!isNaN(numero)) {
         soma += numero
-        cont++    
+        cont++
     }
-    
+
     numero = parseInt(prompt('Qual o número: '))
 
 } while (numero != 999);
@@ -140,12 +140,12 @@ for (let i = 0; i < 8; i++) {
 console.log('Com os números digitados no conjunto A, o conjunto B fica assim:')
 for (let i = 0; i < 8; i++) {
     console.log(conjuntoB[i])
-    
+
 }
 */
 
 
-
+/*
 //⦁	Faça um algoritmo que leia dois conjuntos com 20 números reais cada (A e B) e monte um conjunto C, onde cada elemento de C é a subtração do elemento correspondente de A com B.
 let conjuntoA = []
 let conjuntoB = []
@@ -166,23 +166,90 @@ for (let i = 0; i < 20; i++) {
     conjuntoC[i] = (conjuntoA[i] - conjuntoB[i])
     document.write(conjuntoC[i]+'<br>')
 }
+*/
+
+/*
+//⦁	Escreva um algoritmo para ler o nome e a idade de uma pessoa, e exibir quantos dias de vida ela possui. Considere sempre anos completos, e que um ano possui 365 dias.
+
+const nome = prompt('Qual o seu nome: ')
+const idade = parseInt(prompt('Qual a sua idade: '))
+
+let idadeDias = idade*365
+
+document.write(`${nome}, Voce já viveu ${idadeDias} dias.`)
+*/
 
 
 /*
-⦁	Escreva um algoritmo para ler o nome e a idade de uma pessoa, e exibir quantos dias de vida ela possui. Considere sempre anos completos, e que um ano possui 365 dias.
+//⦁	Um motorista deseja colocar no seu tanque X litros de gasolina. Escreva um algoritmo para ler o preço do litro da gasolina e o valor do pagamento, e exibir quantos litros ele conseguiu colocar no tanque.
 
-⦁	Um motorista deseja colocar no seu tanque X litros de gasolina. Escreva um algoritmo para ler o preço do litro da gasolina e o valor do pagamento, e exibir quantos litros ele conseguiu colocar no tanque. 
+const PrecoLitro = parseInt(prompt('Qual o preço da gasolina? '))
+const valorPago = parseInt(prompt('Qual o valor do pago no posto? '))
+let litros = valorPago / PrecoLitro
+document.write(`Você conseguiu abastecer ${litros} Litros com o valor pago ao posto.`)
 
-⦁	Crie um programa que o usuário digite dois números inteiros e positivos. Em seguida calcule Z, onde Z é: 
-Z = X² + Y²
-
-⦁	Escreva um programa que leia 3 números inteiros distintos e os imprima em ordem crescente.
-
-⦁	Escreva um programa que lê 10 números e em seguida imprime quantos deles são iguais.
+*/
 
 
-⦁	Escreva uma função que solicita o usuário digitar um número de 1 à 7. Em seguida a função imprime uma mensagem com o dia da semana de acordo o número digitado: (use Switch case).
+/*
+//⦁	Crie um programa que o usuário digite dois números inteiros e positivos. Em seguida calcule Z, onde Z é:
+//Z = X² + Y²
 
+let inteiro1 = 0
+let inteiro2 = 0
+let valorZ = 0
+while (inteiro1 <= 0 && inteiro2 <=0) {
+    inteiro1 = parseInt(prompt('Qual o primeiro inteiro positivo? '))
+    inteiro2 = parseInt(prompt('Qual o segundo inteiro positivo? '))
+}
+
+valorZ = Math.pow(inteiro1,2)+Math.pow(inteiro2,2)
+
+document.write(`O valor de Z é: ${valorZ}`)
+*/
+
+
+/*
+//⦁	Escreva um programa que leia 3 números inteiros distintos e os imprima em ordem crescente.
+
+var numeros = []
+
+for (let i = 0; i < 3; i++) {
+    numeros[i] = parseInt(prompt(`Qual o ${i+1}° número: `))
+
+}
+
+numeros.sort((a,b) => a - b)
+
+console.log(numeros)
+*/
+
+
+/*
+//⦁	Escreva um programa que lê 10 números e em seguida imprime quantos deles são iguais.
+
+let array = []
+let cont = 0
+for (let i = 0; i < 10; i++) {
+    array[i] = parseInt(prompt(`Qual o ${i+1}° número:  `))
+    if (array[i] == array[i-1]) {
+        cont++
+    }
+
+}
+
+console.log(`A quantidade de número(s) igual(ais) dentre os digitados são: ${cont}`)
+*/
+
+
+
+//⦁	Escreva uma função que solicita o usuário digitar um número de 1 à 7. Em seguida a função imprime uma mensagem com o dia da semana de acordo o número digitado: (use Switch case).
+
+
+
+
+
+/*
 Nas questões a seguir é obrigatório o uso do While
 
 ⦁	Como ficaria o algoritmo para calcular a media dos 50 alunos usando repetição fixa?
