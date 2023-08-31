@@ -391,7 +391,7 @@ document.write(`O menor número entre os 20 digitados é: ${menor}<br>`)
 
 */
 
-
+/*
 //⦁	Como seria um programa para calcular a média de 50 alunos de uma turma?
 
 const nome = []
@@ -401,7 +401,7 @@ let media = []
 let i = 0
 
 
-while (i < 10) {
+while (i < 50) {
     nome[i] = prompt(`Digite o nome do ${i + 1}° nome dos 50 alunos: `)
     nota1[i] = parseInt(prompt(`Insira a primeira nota de ${nome[i]}: `))
     nota2[i] = parseInt(prompt(`Insira a segunda  nota de ${nome[i]}: `))
@@ -411,19 +411,23 @@ while (i < 10) {
 
 i = 0
 
-while (i < 10) {
+while (i < 50) {
     document.write(`Aluno: ${nome[i]}, notas: ${nota1[i]} e ${nota2[i]}. média: ${media[i]}<br>`)
     i++
 }
+*/
+
+
+
+//⦁	Escreva um programa que calcula o produto de dois números lidos sem usar o operador de multiplicação (‘*’).
+
+
 
 
 
 
 
 /*
-⦁	Escreva um programa que calcula o produto de dois números lidos sem usar o operador de multiplicação (‘*’).
-
-
 ⦁	Construa um algoritmo que fica lendo indefinidamente números positivos. Caso o numero lido seja igual a 0 o algoritmo para de ler números e imprime a média dos números pares lidos anteriormente.
 
 Na questão a seguir é obrigatório o uso do Do .. While
