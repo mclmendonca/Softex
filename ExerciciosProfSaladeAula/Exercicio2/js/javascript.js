@@ -354,16 +354,73 @@ document.write(`A soma dos ìmpares entre 100 e 200 é: ${soma}`)
 */
 
 
+/*
+//⦁	Construa um algoritmo que leia um conjunto de 20 numeros inteiros e mostre qual foi o maior e o menor valor fornecido.
+
+
+let numeros = []
+let i = 0
+let maior
+let menor
+while (i < 20) {
+    do {
+        numeros[i] = parseInt(prompt(`Qual o ${i + 1}° número dos 20: `))
+
+    } while (isNaN(numeros[i]));
+
+
+    if (!maior) {
+        maior = numeros[i]
+    } else if (numeros[i] > maior) {
+        maior = numeros[i]
+    }
+
+
+    if (!menor) {
+        menor = numeros[i]
+    } else if (menor > numeros[i]) {
+        menor = numeros[i]
+    }
+    i++
+
+
+}
+
+document.write(`O maior número entre os 20 digitados é: ${maior}<br>`)
+document.write(`O menor número entre os 20 digitados é: ${menor}<br>`)
+
+*/
+
+
+//⦁	Como seria um programa para calcular a média de 50 alunos de uma turma?
+
+const nome = []
+const nota1 = []
+const nota2 = []
+let media = []
+let i = 0
+
+
+while (i < 10) {
+    nome[i] = prompt(`Digite o nome do ${i + 1}° nome dos 50 alunos: `)
+    nota1[i] = parseInt(prompt(`Insira a primeira nota de ${nome[i]}: `))
+    nota2[i] = parseInt(prompt(`Insira a segunda  nota de ${nome[i]}: `))
+    media[i] = (nota1[i] + nota2[i]) / 2
+    i++
+}
+
+i = 0
+
+while (i < 10) {
+    document.write(`Aluno: ${nome[i]}, notas: ${nota1[i]} e ${nota2[i]}. média: ${media[i]}<br>`)
+    i++
+}
+
 
 
 
 
 /*
-⦁	Construa um algoritmo que leia um conjunto de 20 numeros inteiros e mostre qual foi o maior e o menor valor fornecido.
-
-
-⦁	Como seria um programa para calcular a média de 50 alunos de uma turma?
-
 ⦁	Escreva um programa que calcula o produto de dois números lidos sem usar o operador de multiplicação (‘*’).
 
 
