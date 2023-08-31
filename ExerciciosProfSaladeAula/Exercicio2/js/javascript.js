@@ -242,23 +242,123 @@ console.log(`A quantidade de número(s) igual(ais) dentre os digitados são: ${c
 */
 
 
-
+/*
 //⦁	Escreva uma função que solicita o usuário digitar um número de 1 à 7. Em seguida a função imprime uma mensagem com o dia da semana de acordo o número digitado: (use Switch case).
+
+
+let numero = 0
+do {
+    numero = parseInt(prompt('Qual número de 1 à 7: '))
+} while (isNaN(numero) || numero < 1 || numero > 7);
+
+imprimeMensagem(numero)
+
+function imprimeMensagem(opcao) {
+    switch (opcao) {
+        case 1: 
+            document.write(`Domingo`)
+            
+            break;
+        case 2:
+            document.write(`Segunda-Feira`)
+            break;
+    
+        case 3:
+            document.write(`Terca-Feira`)
+            break;
+    
+        case 4:
+            document.write(`Quarta-Feira`)
+            break;
+    
+        case 5:
+            document.write(`Quinta-Feira`)
+            break;
+    
+        case 6:
+        document.write(`Sexta-Feira`)
+            break;
+    
+        case 7:
+        document.write(`Sabado`)
+            break;
+        
+        default:
+            document.write(`Escolha uma entre 1 e 7`)
+            break;
+    }
+    
+}
+*/
+
+/*
+//Nas questões a seguir é obrigatório o uso do While
+
+//⦁	Como ficaria o algoritmo para calcular a media dos 50 alunos usando repetição fixa?
+
+let nota = 0
+let soma = 0
+let cont = 0
+
+while (cont < 50) {
+    nota = parseInt(prompt(`Insira a ${cont+1}a nota das 50: `))
+    soma += nota
+    cont++
+}
+
+media = soma/cont
+
+document.write(`A média das 50 notas digitadas são: ${media}`)
+
+*/
+
+
+
+/*
+//⦁	Escreva um algoritmo que lê 50 números inteiros e em seguida mostra a soma de todos os ímpares lidos.
+
+let numero = 0
+let cont = 0
+let soma = 0
+
+while (cont < 50) {
+    numero = parseInt(prompt(`Insira a ${cont+1}o número dos 50: `))
+
+    if (numero%2 != 0) {
+        soma += numero
+    }
+    cont++
+}
+
+document.write(`A soma dos ìmpares desses 50 números é: ${soma}`)
+
+*/
+
+
+/*
+//⦁	Altere o algoritmo anterior para que ele considere apenas a soma dos ímpares que estejam entre 100 e 200.
+
+let cont = 100
+let soma = 0
+
+while (cont <= 200) {
+    
+    if (cont%2 != 0) {
+        soma += cont
+    }
+    cont++
+}
+
+document.write(`A soma dos ìmpares entre 100 e 200 é: ${soma}`)
+
+*/
+
 
 
 
 
 
 /*
-Nas questões a seguir é obrigatório o uso do While
-
-⦁	Como ficaria o algoritmo para calcular a media dos 50 alunos usando repetição fixa?
-
-⦁	Escreva um algoritmo que lê 50 números inteiros e em seguida mostra a soma de todos os ímpares lidos.
-
-
-⦁	Altere o algoritmo anterior para que ele considere apenas a soma dos ímpares que estejam entre 100 e 200.
-
 ⦁	Construa um algoritmo que leia um conjunto de 20 numeros inteiros e mostre qual foi o maior e o menor valor fornecido.
 
 
