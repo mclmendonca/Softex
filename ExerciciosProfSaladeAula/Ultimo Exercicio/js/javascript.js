@@ -1,3 +1,4 @@
+/*
 let celcius = 0
 let fereinheit = 0
 let kelvin = 0
@@ -66,3 +67,19 @@ function kelvinpFereinheit(kelvin) {
     let fereinheit = (((kelvin-273.15)*9)/5)+32
     document.write(`${kelvin} °K é : ${fereinheit} °F`)
 }
+
+*/
+
+let numeros = []
+
+for (let i = 0; i < 3 ; i++) {
+    numeros[i] = parseInt(prompt(`Qual o ${i+1}° numero?`))    
+}
+
+numeros.sort((a,b) => a - b)
+
+console.log(numeros)
+
+
+
+
