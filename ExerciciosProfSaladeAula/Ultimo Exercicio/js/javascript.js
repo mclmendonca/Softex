@@ -1,3 +1,4 @@
+/*
 let celcius = 0
 let fereinheit = 0
 let kelvin = 0
@@ -66,3 +67,21 @@ function kelvinpFereinheit(kelvin) {
     let fereinheit = (((kelvin-273.15)*9)/5)+32
     document.write(`${kelvin} °K é : ${fereinheit} °F`)
 }
+
+*/
+
+
+function find_max(nums) {
+    let max_num = Number.NEGATIVE_INFINITY; // smaller than all other numbers
+    for (let num of nums) {
+        if (num > max_num) {
+            max_num = num
+        }
+    }
+    return max_num;
+}
+
+array = [1,2,3,4,5,6,7,8,9]
+console.log(find_max(array))
+
+
