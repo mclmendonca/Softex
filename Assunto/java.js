@@ -1,4 +1,3 @@
-/*
 let celcius = 0
 let fereinheit = 0
 let kelvin = 0
@@ -6,27 +5,27 @@ const conversor = prompt('Qual conversão você deseja:\n1 - Celcius para Ferein
 
 switch (conversor) {
     case '1': 
-        celcius = parseInt(prompt('Qual o grau celcius que voce deseja converter: '))
+        celcius = parseFloat(prompt('Qual o grau celcius que voce deseja converter: '))
         celciuspFerenheit(celcius)
         break;
     case '2':
-         celcius = parseInt(prompt('Qual o grau celcius que voce deseja converter: '))
+         celcius = parseFloat(prompt('Qual o grau celcius que voce deseja converter: '))
          celciuspKelvin(celcius)
         break;
     case '3':
-        fereinheit = parseInt(prompt('Qual o grau fereinheit que voce deseja converter: '))
+        fereinheit = parseFloat(prompt('Qual o grau fereinheit que voce deseja converter: '))
         fereinheitpCelcius(fereinheit)
         break;
     case '4':
-        fereinheit = parseInt(prompt('Qual o grau fereinheit que voce deseja converter: '))
+        fereinheit = parseFloat(prompt('Qual o grau fereinheit que voce deseja converter: '))
         fereinheitpKelvin(fereinheit)
         break;
     case '5':
-        kelvin = parseInt(prompt('Qual o grau Kelvin que voce deseja converter: '))
+        kelvin = parseFloat(prompt('Qual o grau Kelvin que voce deseja converter: '))
         kelvinpCelcius(kelvin)
         break;
     case '6':
-        kelvin = parseInt(prompt('Qual o grau Kelvin que voce deseja converter: '))
+        kelvin = parseFloat(prompt('Qual o grau Kelvin que voce deseja converter: '))
         kelvinpFereinheit(kelvin)
         break;
     case '0':
@@ -67,35 +66,3 @@ function kelvinpFereinheit(kelvin) {
     let fereinheit = (((kelvin-273.15)*9)/5)+32
     document.write(`${kelvin} °K é : ${fereinheit} °F`)
 }
-
-*/
-
-<<<<<<< HEAD
-
-function find_max(nums) {
-    let max_num = Number.NEGATIVE_INFINITY; // smaller than all other numbers
-    for (let num of nums) {
-        if (num > max_num) {
-            max_num = num
-        }
-    }
-    return max_num;
-}
-
-array = [1,2,3,4,5,6,7,8,9]
-console.log(find_max(array))
-=======
-let numeros = []
-
-for (let i = 0; i < 3 ; i++) {
-    numeros[i] = parseInt(prompt(`Qual o ${i+1}° numero?`))    
-}
-
-numeros.sort((a,b) => a - b)
-
-console.log(numeros)
-
-
->>>>>>> 27849402197ae0180d26fa420e57bb35feb66093
-
-

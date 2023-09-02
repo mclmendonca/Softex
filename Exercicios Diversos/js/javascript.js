@@ -12,7 +12,7 @@ matriz.forEach(row => {
 })
 */
 
-
+/*
 let notas = [
 
     [5.5, 7.9, 7.1],  //Notas de José
@@ -61,6 +61,26 @@ mediaNotas.push(coluna3)
 
 console.log('A média dos alunos é: '+mediaAlunos)
 console.log('A média das notas é:  '+mediaNotas)
+
+*/
+
+
+let i
+
+do {
+    i = parseInt(prompt('Qual o valor 10?'))
+    
+    if (i != 10) {
+        window.alert('O valor digitado é diferente de 10')
+    }
+
+} while (i != 10);
+
+while (i <= 50) {
+    document.write(i+'<br>')
+    i++
+}
+
 
 
 
