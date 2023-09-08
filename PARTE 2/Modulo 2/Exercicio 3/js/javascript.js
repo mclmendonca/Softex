@@ -33,7 +33,9 @@ switch (operador) {
         resultado = valor1 / valor2
         resto = valor1 % valor2
         console.log(`O resultado da divisão é: ${resultado}.`)
-        console.log(`O resultado do resto da divisão é: ${resto}.`)
+        if (resto != 0) {
+            console.log(`O resultado do resto da divisão é: ${resto}.`)
+        }
         break;
 
     default:
