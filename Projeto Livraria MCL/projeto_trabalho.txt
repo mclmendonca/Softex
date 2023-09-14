@@ -1,0 +1,66 @@
+
+menu de opçoes:
+
+1- Produtos(Livros).
+	1.1 Cadastrar Livro
+		nome
+		autor
+		editora
+		preço custo
+		preço venda
+		estoque
+	1.2 alterar Livro
+		1.2.1buscar pelo nome
+			1.2.1.1 que campo deseja alterar
+		1.2.2buscar pelo autor
+			1.2.2.1 que campo deseja alterar
+	1.3 deletar Livro
+		1.3.1buscar pelo nome
+			1.3.1.1 que campo deseja alterar
+		1.3.2buscar pelo autor
+			1.3.2.1 que campo deseja alterar
+	
+2- venda.
+	Tela de venda por código ou por titulo parcial.
+3- devolução.
+	tela para devolver o livro comprado.
+4- relatório de estoque.
+	opção de impressão total ou de um titulo especifico.
+0- sair.
+
+
+classe livro
+
+	nome
+	autor
+	editora
+	preço custo
+	preço venda
+	estoque
+
+
+classe listaLivros
+
+	construtor para a criação da lista
+	
+	cadastrar livro =  o usuario vai solicitar o cadastro do livro e vai digitar as informações uma por uma.
+
+	deletarLivro = vou mostrar a lista a ele e ele vai escolher numericamente o que deletar.
+
+	alteraLivro = vou mostrar a lista a ele e ele vai escolher numericamente o que alterara depois disso eu mostro os campos e numericamente ele vai escolher o que alterar e alteramos.
+
+
+
+classe loja
+
+	metodo venderLivro
+	
+	método devolucao
+
+	metodo emitirRelatório
+
+
+
+
+20230009333198 ate
+5034893 ticket
