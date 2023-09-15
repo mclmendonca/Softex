@@ -1,5 +1,5 @@
 
-menu de opçoes:
+Programa Livraria.
 
 1- Produtos(Livros).
 	1.1 Cadastrar Livro
@@ -20,12 +20,19 @@ menu de opçoes:
 		1.3.2buscar pelo autor
 			1.3.2.1 que campo deseja alterar
 	
+
 2- venda.
-	Tela de venda por código ou por titulo parcial.
+	2.1 busca e seleção de livros para o carrinho( que seria uma espécie de array). no fim uma impressao em tela de um cupom com as infos.
+
+
 3- devolução.
-	tela para devolver o livro comprado.
+	3.1 busca do livro pelo nome ou pelo autor e simplesmente por a quantidade que está sendo devolvido.
+
+
 4- relatório de estoque.
-	opção de impressão total ou de um titulo especifico.
+	4.1 opção de impressão total ou de um titulo especifico.
+
+
 0- sair.
 
 
