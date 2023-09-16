@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "readline-sync": "^1.4.10"
+    "readline-sync": "^1.4.10",
+    "table": "^6.8.1"
   }
 }
