@@ -65,16 +65,23 @@ class Loja {
 
 class ItemCarrinho extends Livro {
 
-  constructor(id, qtd) {
-    super(nome, preco)
+  constructor(id, qtd, nome, preco, precoTotal) {
+    super(nome, '', '', preco)
     this.id = id
     this.quantidade = qtd
+    this.precoTotal = precoTotal
+
   }
 }
 
 class Carrinho {
-  constructor(produto) {
+  constructor() {
     this.carrinho = []
+  }
+
+  inserirCarrinho(produto) {
+    this.carrinho.push(produto)
+    return console.log('Livro inserio no carrinho com sucesso.')
   }
 }
 
@@ -84,6 +91,7 @@ var leia = require('readline-sync')
 
 //estanciando a lista de livros 
 const lista = new ListaLivros()
+const paraCarrinho = new Carrinho()
 
 // coloquei esses livros para termos opções para apresentar ao professor.
 
@@ -224,29 +232,74 @@ do {
       // abateríamos as devidas quantidades dos seus respectivos estoques. no fim um demonstrativo que lembre um cupom.
       let option3
       do {
-        console.log("============+++++++     Livraria Jaca   +++++++==========\n")
-        console.log("=================| Produtos Disponíveis: |===============\n")
-        console.log("Opção ===== Produto  ====================  Preço  =======\n")
-        let item = 0
-        for (const iterator of lista.listaLivros) {
-          item = (lista.listaLivros.indexOf(iterator))
-          console.log((item + 1) + '\t' + iterator.nome + '\t\t R$: ' + iterator.preco)
+        console.log("===============+++++++     Livraria Jaca   +++++++================\n")
+        console.log("====================| Produtos Disponíveis: |=====================\n")
+        console.log("Opção ====== Produto  =======================  Preço  ============\n")
+
+        for (const i in lista.listaLivros) {
+          console.log((parseInt(i) + 1) + '\t' + lista.listaLivros[i].nome + '\t\t R$ ' + lista.listaLivros[i].preco)
         }
+
         console.log('\n0\tPara Voltar')
-        console.log("=========================================================\n")
+        console.log("==================================================================\n")
         option3 = parseInt(leia.question('Escolha uma das opçõs para adicionar ao carrinho: '))
 
-        let escolhido = lista.listaLivros.indexOf((option3 - 1))
+        let nomeEscolhido
+        let precoEscolhido
+        let precoTotal
 
         let quantidade
         do {
-          quantidade = parseInt(leia.question('qual a quantidade?'))
+          quantidade = parseInt(leia.question('qual a quantidade? '))
         } while (isNaN(quantidade))
 
-/////////////////////// PAREI AQUI. CRIEI A CLASSE ITEM CARRINHO PARA CRIAR O OBJETO E 
-///////////////////////A CLASSE CARRINHO PARA FAZER O CARRINHO E VOU CRIAR OS METODOS PARA POR OS OBJETOS NO CARRINHO.
-///////////////////////AGORA É FAZER ISSO ACONTECER E INSERIR MAIS DE UM PRODUTO NO CARRINHO, MOSTRAR PEDIDO , ESCOLHER
-/////////////////////// FORMA DE PAGTO E FECHAR MOSTRANDO UMA NOTA.
+        for (const i in lista.listaLivros) {
+          if (i == (option3 - 1)) {
+            nomeEscolhido = lista.listaLivros[i].nome
+            precoEscolhido = lista.listaLivros[i].preco
+          }
+        }
+
+        precoTotal = (precoEscolhido * quantidade)
+
+
+        let selecionado = new ItemCarrinho((option3 - 1), quantidade, nomeEscolhido, precoEscolhido, precoTotal)
+        paraCarrinho.inserirCarrinho(selecionado)
+
+        let simnao
+        let subtotal = 0
+
+        console.log("===============+++++++     Livraria Jaca   +++++++================\n")
+        console.log("=====================|        Carrinho       |====================\n")
+        console.log("Opção ====== Produto  ======== qtd ==== Preco ====== Preço Total =\n")
+
+
+        for (const i in paraCarrinho.carrinho) {
+          console.log((parseInt(i) + 1) + '\t' + paraCarrinho.carrinho[i].nome + '\t' + paraCarrinho.carrinho[i].quantidade + '\t R$ ' + paraCarrinho.carrinho[i].preco + '\t R$ ' + paraCarrinho.carrinho[i].precoTotal)
+          subtotal += paraCarrinho.carrinho[i].precoTotal
+        }
+
+        console.log("\n===================================================== SUBTOTAL ===")
+        console.log('\t\t\t\t\t\t\t R$ ' + subtotal)
+        console.log("==================================================================\n")
+        console.log('\n0\tPara Voltar')
+        console.log("==================================================================\n")
+
+        do {
+          simnao = leia.question('Escolha uma das opçõs para adicionar ao carrinho: (s/n) ')
+          simnao = simnao.toLowerCase()
+
+          if (simnao != 's' && simnao != 'n') {
+            console.log('Por Favor, digite S para SIM ou N para NÃO.')
+          }
+        } while (simnao != 's' && simnao != 'n')
+
+        if (simnao == 'n') {
+          console.log()
+        }
+
+
+        /////////////////////// PAREI AQUI. É PRECISO POR AS FORMAS DE PAGAMENTO E AO ESCOLHER FAZERUMA ESPÉCIE DE NFE E TIRAR OS ITENS VENDIDOS DO ESTOQUE. AÍ FINALIZA.
 
 
 
