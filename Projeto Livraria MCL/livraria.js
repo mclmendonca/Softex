@@ -44,7 +44,7 @@ class ListaLivros {
 }
 
 
-// criei a classe de loja para colocar os métodos onde faremos as ações da loja efetivamente
+// criei a classe de loja para colocar os métodos onde faremos as acoes da loja efetivamente
 // ou seja movimentar o estoque vendendo livros, devolvendo eles e emitir um relatório onde 
 // eu vou listar o que existe dentro do array listsLivros
 class Loja {
@@ -80,6 +80,8 @@ class Loja {
 
 }
 
+
+//Criei essa classe para criar os itens do carrinho, usei o conceito de herança aqui
 class ItemCarrinho extends Livro {
 
   constructor(id, qtd, nome, preco, precoTotal) {
@@ -91,6 +93,8 @@ class ItemCarrinho extends Livro {
   }
 }
 
+//Aqui crio a classe do carrinho em si, um array onde eu guardo os objetos feitos em "ItemCarrinho" 
+//para montar o pedido, depois o cupom e vender.
 class Carrinho {
   constructor() {
     this.carrinho = []
@@ -98,7 +102,7 @@ class Carrinho {
 
   inserirCarrinho(produto) {
     this.carrinho.push(produto)
-    return console.log('Livro inserio no carrinho com sucesso.')
+    return console.log('\nLivro inserio no carrinho com sucesso.')
   }
 }
 
@@ -106,21 +110,20 @@ class Carrinho {
 //colocando na variável leia algo que vai ajudar a conseguirmos ler aquilo que o cliente responde na tela.
 var leia = require('readline-sync')
 
-//estanciando a lista de livros 
+//espaço para estanciar o necessario para o bom funcionamento do programa orientado a objeto
 const lista = new ListaLivros()
 const paraCarrinho = new Carrinho()
 const loja = new Loja()
 
-// coloquei esses livros para termos opções para apresentar ao professor.
 
-
+// coloquei esses livros para termos opcoes para apresentar ao professor.
 
 const book3 = new Livro('Hount of Baskervilles', 'Arthur Conan Doyle', 'Penguim', 200, 50)
 const book4 = new Livro('A Study in a Red', 'Arthur Conan Doyle', 'Penguim', 150, 30)
 const book5 = new Livro('O Foguete da Morte', 'Ian Fleming', 'Eon', 100, 60)
-const book6 = new Livro('Diamantes são Eternos', 'Sean Connery', 'Broccoli', 90, 10)
+const book6 = new Livro('Diamantes sao Eternos', 'Sean Connery', 'Broccoli', 90, 10)
 const book7 = new Livro('Viva e Deixe Morrer', 'Roger Moore', 'Wilson', 80, 60)
-const book8 = new Livro('O Amanhã Nunca Morre', 'Pierce Brosnan', 'United', 150, 30)
+const book8 = new Livro('O Amanha Nunca Morre', 'Pierce Brosnan', 'United', 150, 30)
 const book9 = new Livro('A Study in a Red', 'Arthur Conan Doyle', 'Penguim', 150, 30)
 const book10 = new Livro('Diario de um Banana', 'Banana', 'Brasil', 10, 600)
 lista.cadastrarLivro(book3)
@@ -134,12 +137,13 @@ lista.cadastrarLivro(book10)
 
 
 
-// aqui começa o código que aparece no console. Começo com um DoWhile gigante para amarrar que o sistema não saia de jeito 
-// nenhum a não ser que o cara digite o "0" que é sair. dentro dele eu vou colocar switchCases para navegar entre os sobmenus
-// da aplicação até chegar no objetivo que o usuário quer dentro do sistema. tudo isso o usuario vai digitando os numeros das
-// opções disponíveis.
+// aqui comeca o código que aparece no console. Comeco com um DoWhile gigante para amarrar que o sistema nao saia de jeito 
+// nenhum a nao ser que o cara digite o "0" que é sair. dentro dele eu vou colocar switchCases para navegar entre os sobmenus
+// da aplicacao até chegar no objetivo que o usuário quer dentro do sistema. tudo isso o usuario vai digitando os numeros das
+// opcoes disponiveis.
 let option
 do {
+  
   console.log('\n=== Livraria ===\n')
   console.log()
   console.log('= ( 1 ) - Livros')
@@ -153,8 +157,9 @@ do {
   switch (option) {
     case 1:
       // se o cliente digitar 1 no primeiro menu, vamos jogar ele para um segundo menu, como 
-      //se fosse um segundo nível de menu onde ele vai escolher mais especificamente o que ele quer fazer.
+      //se fosse um segundo nivel de menu onde ele vai escolher mais especificamente o que ele quer fazer.
       let option2
+      console.clear()
       do {
         console.log('\n=== Livros ===\n')
         console.log()
@@ -166,7 +171,7 @@ do {
 
         option2 = parseInt(leia.question('\n= Escolha uma das opcoes = '))
 
-
+        
 
         switch (option2) {
           case 1:
@@ -174,7 +179,7 @@ do {
             // usuario vai responder a medida que o sistema pergunta a ele: precisamos pensar sobre 
             // cada problema que a pergunta implicar e tratar os possiveis erros: aqui eu uso as 
             // variáveis que eu declarei lá no inicio do código
-            titulo = leia.question('Qual o Título do livro? ')
+            titulo = leia.question('Qual o Titulo do livro? ')
 
             do {
               autor = leia.question('Qual o Autor do livro? ')
@@ -186,7 +191,7 @@ do {
             editora = leia.question('Qual a Editora do livro? ')
 
 
-            preco = leia.question('Qual o Preço do livro? ')
+            preco = leia.question('Qual o Preco do livro? ')
 
 
 
@@ -205,21 +210,21 @@ do {
 
           case 2:
             // Se o cliente digitar 2 no segundo menu de Livros vamos apagar o registro do livro no array ListaLivros.
-            // penso que poderíamos criar aqui um outro nível de menu dando duas opções do cliente porder achar o livro
+            // penso que poderiamos criar aqui um outro nivel de menu dando duas opcoes do cliente porder achar o livro
             // a ser alterado. seria assim (1) para procurar pelo titulo e (2) para procurar pelo autor e (0) para voltar
             // ao manu anterior. Depois de acessar esse menu e o sistema mostrar os titulos em tela do que se encaixa 
-            // dentro do que foi procurado o usuario iria escolher qual dos títulos quer deletar(usando o menun numerico).
+            // dentro do que foi procurado o usuario iria escolher qual dos titulos quer deletar(usando o menun numerico).
             // no fim a mensagem "Livro deletado com sucesso".        
             break;
 
           case 3:
             // Se o cliente digitar 3 no segundo menu de Livros vamos alterar algum dos dados do livro no array ListaLivros.
-            // penso que poderíamos criar aqui um outro nível de menu dando duas opções do cliente porder achar o livro
+            // penso que poderiamos criar aqui um outro nivel de menu dando duas opcoes do cliente porder achar o livro
             // a ser alterado. seria assim (1) para procurar pelo titulo e (2) para procurar pelo autor e (0) para voltar
             // ao manu anterior. Depois de acessar esse menu e o sistema mostrar os titulos em tela do que se encaixa 
-            // dentro do que foi procurado o usuario iria escolher qual dos títulos quer alterar. escolhedo o livro, 
+            // dentro do que foi procurado o usuario iria escolher qual dos titulos quer alterar. escolhedo o livro, 
             // apareceria outro menu para dizer qual dos atributos quer mexer e finalmente em outra tela ele digitaria o
-            // valor a ser gravado. no fim a mensagem "Alteração feita com sucesso".
+            // valor a ser gravado. no fim a mensagem "Alteracao feita com sucesso".
 
             break;
 
@@ -231,7 +236,7 @@ do {
 
 
           default:
-            console.log('Opção inválida, por favor digite uma opção entre 1 e 3 ou 0 para voltar.')
+            console.log('\nopcao inválida, por favor digite uma opcao entre 1 e 3 ou 0 para voltar.\n')
             break;
 
 
@@ -247,12 +252,13 @@ do {
       // vender o livro. Vender nada mais é do que selecionar um livro ou mais de um de livros, colocar num "carrinho"
       // somar os totais. totalizar e pagar. penso que o carrinho pode ser um novo array que inseriamos neles os livros
       // que selecionássimos após uma busca por titulo ou por autor, ou através de uma listagem em tela com todos os itens.
-      // abateríamos as devidas quantidades dos seus respectivos estoques. no fim um demonstrativo que lembre um cupom.
+      // abateriamos as devidas quantidades dos seus respectivos estoques. no fim um demonstrativo que lembre um cupom.
       let option3
       do {
+        console.clear()
         console.log("===============+++++++     Livraria Jaca   +++++++================\n")
-        console.log("====================| Produtos Disponíveis: |=====================\n")
-        console.log("Opção ====== Produto  =======================  Preço  ============\n")
+        console.log("====================| Produtos Disponiveis: |=====================\n")
+        console.log("opcao ====== Produto  =======================  Preco  ============\n")
 
         let itemOpcao = 0
         for (const i in lista.listaLivros) {
@@ -262,18 +268,14 @@ do {
 
         console.log('\n0\tPara Voltar')
         console.log("==================================================================\n")
-        option3 = parseInt(leia.question('Escolha uma das opçõs para adicionar ao carrinho: '))
-
-        if(isNaN(option3) || option3 > itemOpcao){
-          console.log('Valor inválido. escolha o valor numerico referente as opcoes disponiveis.')
-        }
-
-        console.log('option3 é : '+option3)
-        console.log('itemOpcao é : '+itemOpcao)
+        option3 = parseInt(leia.question('Escolha uma das opcos para adicionar ao carrinho: '))
 
 
-      
 
+
+
+        if( option3 > 0 && option3 <= itemOpcao){
+            
 
         let nomeEscolhido
         let precoEscolhido
@@ -281,7 +283,7 @@ do {
 
         let quantidade
         do {
-          quantidade = parseInt(leia.question('qual a quantidade? '))
+          quantidade = parseInt(leia.question('\nqual a quantidade? '))
         } while (isNaN(quantidade))
 
         for (const i in lista.listaLivros) {
@@ -300,9 +302,10 @@ do {
         let simnao
         let subtotal = 0
 
+        console.clear()
         console.log("===============+++++++     Livraria Jaca   +++++++================\n")
         console.log("=====================|        Carrinho       |====================\n")
-        console.log("Opção ====== Produto  ======== qtd ==== Preco ====== Preço Total =\n")
+        console.log("opcao ====== Produto  ======== qtd ==== Preco ====== Preco Total =\n")
 
 
         for (const i in paraCarrinho.carrinho) {
@@ -313,15 +316,15 @@ do {
         console.log("\n===================================================== SUBTOTAL ===")
         console.log('\t\t\t\t\t\t\t R$ ' + subtotal)
         console.log("==================================================================\n")
-        console.log('\n0\tPara Voltar')
-        console.log("==================================================================\n")
+        //console.log('\n0\tPara Voltar')
+        //console.log("==================================================================\n")
 
         do {
           simnao = leia.question('mais algum livro no carrinho? (s/n) ')
           simnao = simnao.toLowerCase()
 
           if (simnao != 's' && simnao != 'n') {
-            console.log('Por Favor, digite S para SIM ou N para NÃO.')
+            console.log('Por Favor, digite S para SIM ou N para NaO.')
           }
         } while (simnao != 's' && simnao != 'n')
 
@@ -334,10 +337,18 @@ do {
             console.log(" 2- Cartao Credito(Rotativo)")
             console.log(" 3- Cartao Débito ")
             console.log("\n=================================================================\n")
-            console.log('0\tPara Voltar')
+            console.log('0\tPara cancelar o pedido')
             console.log("=================================================================\n")
             option5 = parseInt(leia.question('Escolha uma das formas de pagamento: '))
             switch (option5) {
+
+              case 0:
+                option5 = 0
+                option3 = 0
+                paraCarrinho.carrinho = []
+                console.log('\nPedido Cancelado com sucesso\n\n')
+                break;
+
               case 1:
                 formaPagto = 'PIX'
                 break;
@@ -351,79 +362,77 @@ do {
                 break;
 
               default:
-                console.log('Opção inválida, por favor digite uma opção entre 1 e 3 ou 0 para voltar.')
+                console.log('opcao inválida, por favor digite uma opcao entre 1 e 3 ou 0 para voltar.')
                 break;
             }
 
-            console.log("\n\n=================+++++++++  Livraria Jaca  ++++++++++=============\n")
-            console.log("------------------------------------------------------------------\n")
-            console.log("--------------------------- CUPOM FISCAL -------------------------\n")
-            console.log("------------------------------------------------------------------\n")
-            console.log("Ordem ====== Produto  ======== qtd ===== Preco ===== Preço Total =\n")
+            if (option5 > 0 && option5 <=3) {
+              console.clear()
+              console.log("\n\n\n=================+++++++++  Livraria Jaca  ++++++++++=============")
+              console.log("------------------------------------------------------------------")
+              console.log("--------------------------- CUPOM FISCAL -------------------------")
+              console.log("------------------------------------------------------------------")
+              console.log("Ordem ====== Produto  ======== qtd ===== Preco ===== Preco Total =\n")
+  
+              let ordem = 0
+              for (const i in paraCarrinho.carrinho) {
+                console.log((parseInt(i) + 1) + '\t' + paraCarrinho.carrinho[i].nome + '\t' + paraCarrinho.carrinho[i].quantidade + '\t R$ ' + paraCarrinho.carrinho[i].preco + '\t\t R$ ' + paraCarrinho.carrinho[i].precoTotal)
+                ordem +=1
+              }
+  
+  
+  
+              console.log("------------------------------------------------------------------")
+              console.log("QTD TOTAL DE ITENS\t                                     "+ordem)
+              console.log(`VALOR TOTAL\t                                      R$  ${subtotal}`)
+              console.log(`DESCONTO\t                                      R$     0`)
+              console.log(`VALOR A PAGAR\t                                      R$  ${subtotal}`)
+              console.log(`FORMA PAGTO:\t                                        ${formaPagto}`)
+              console.log("==================================================================\n\n\n")
+  
+              
 
-            let ordem = 0
-            for (const i in paraCarrinho.carrinho) {
-              console.log((parseInt(i) + 1) + '\t' + paraCarrinho.carrinho[i].nome + '\t' + paraCarrinho.carrinho[i].quantidade + '\t R$ ' + paraCarrinho.carrinho[i].preco + '\t\t R$ ' + paraCarrinho.carrinho[i].precoTotal)
-              ordem +=1
+              //vou tirar os itens vendidos do estoque
+                
+              loja.venderLivros()         
+    
+              option5 = 0
+              option3 = 0
+              paraCarrinho.carrinho = []
             }
-
-
-
-            console.log("------------------------------------------------------------------\n")
-            console.log("QTD TOTAL DE ITENS\t                                     "+ordem)
-            console.log(`VALOR TOTAL\t                                      R$  ${subtotal}`)
-            console.log(`DESCONTO\t                                      R$     0`)
-            console.log(`VALOR A PAGAR\t                                      R$  ${subtotal}`)
-            console.log(`FORMA PAGTO:\t                                        ${formaPagto}\n`)
-            console.log("==================================================================\n")
-
-
-
-            //vou tirar os itens vendidos do estoque
-            
-
-            loja.venderLivros()
-
-           
-
-
-
-
-            option5 = 0
-            option3 = 0
-            paraCarrinho.carrinho = []
 
 
           } while (option5 != 0);
 
 
-
-
         }
+
+        }else if(option3 == 0){
+            option3 = 0
+            paraCarrinho.carrinho = []
+            console.log('\nPedido Cancelado com Sucesso!\n')          
+          }else{
+          console.log('\nOpcao inválida, por favor digite uma das opcoes disponiveis.\n')
+        }
+
+      
 
 
       } while (option3 != 0)
 
       
 
-
-
-
-
-
-
-
       break;
 
     case 3:
-      // se o cliente digitar 3 iriamos devolver o livro. faríamos uma busca desse livro pelo titulo ou pelo autor e ao 
+      // se o cliente digitar 3 iriamos devolver o livro. fariamos uma busca desse livro pelo titulo ou pelo autor e ao 
       // selecionar o usuario informaria a quantidade a ser devolvida e somariamos ele ao nosso estoque. no fim a mensagem
       // "devolvido com sucesso".
 
       break;
 
     case 4:
-      // Se o cliente digitar  4 no primeiro menu nós exibimos a lista de produtos cadastrados com todas as informações
+      // Se o cliente digitar  4 no primeiro menu nós exibimos a lista de produtos cadastrados com todas as informacoes
       // do produto. se pudermos caprichar e dar uma cara de relatório ao resultado... melhor.
       for (const iterator of lista.listaLivros) {
         console.log(iterator)
@@ -432,7 +441,7 @@ do {
       break;
 
     default:
-      console.log('Opção inválida, por favor digite uma opção entre 1 e 4 ou 0 para sair.')
+      console.log('opcao inválida, por favor digite uma opcao entre 1 e 4 ou 0 para sair.')
       break;
   }
 
@@ -442,27 +451,3 @@ do {
 
 
 
-
-
-/*
-const book3 = new Livro('Hount of Baskervilles', 'Arthur Conan Doyle', 'Penguim', 200, 50)
-const book4 = new Livro('A Study in a Red', 'Arthur Conan Doyle', 'Penguim', 150, 30)
-const book5 = new Livro('Casino Royale', 'Ian Fleming', 'Eon', 100, 60)
-const book6 = new Livro('Os Diamantes são Eternos', 'Sean Connery', 'Broccoli', 90, 10)
-const book7 = new Livro('Viva e Deixe Morrer', 'Roger Moore', 'Wilson', 80, 60)
-const book8 = new Livro('O Amanhã Nunca Morre', 'Pierce Brosnan', 'United', 150, 30)
-const book9 = new Livro('A Study in a Red', 'Arthur Conan Doyle', 'Penguim', 150, 30)
-const book10 = new Livro('A Study in a Red', 'Arthur Conan Doyle', 'Penguim', 150, 30)
-const book11 = new Livro('A Study in a Red', 'Arthur Conan Doyle', 'Penguim', 150, 30)
-const book12 = new Livro('Diario de um Banana', 'Banana', 'Brasil', 10, 600)
-lista.cadastrarLivro(book3)
-lista.cadastrarLivro(book4)
-lista.cadastrarLivro(book5)
-lista.cadastrarLivro(book6)
-lista.cadastrarLivro(book7)
-lista.cadastrarLivro(book8)
-lista.cadastrarLivro(book9)
-lista.cadastrarLivro(book10)
-lista.cadastrarLivro(book11)
-lista.cadastrarLivro(book12)
-*/
