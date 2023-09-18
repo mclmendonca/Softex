@@ -50,6 +50,23 @@ class ListaLivros {
 class Loja {
 
   venderLivros() {
+    let idped
+    let qtdped
+
+    for (const i in paraCarrinho.carrinho) {
+      
+      idped = paraCarrinho.carrinho[i].id
+      qtdped = paraCarrinho.carrinho[i].quantidade
+
+        for (const j in lista.listaLivros) {
+          if (idped == j) {
+              lista.listaLivros[j].estoque -= qtdped                    
+            
+          }
+        }
+      
+    }
+
 
   }
 
@@ -92,6 +109,7 @@ var leia = require('readline-sync')
 //estanciando a lista de livros 
 const lista = new ListaLivros()
 const paraCarrinho = new Carrinho()
+const loja = new Loja()
 
 // coloquei esses livros para termos opções para apresentar ao professor.
 
@@ -130,7 +148,7 @@ do {
   console.log('= ( 4 ) - Relatório de Estoque')
   console.log('= ( 0 ) - Sair')
 
-  option = parseInt(leia.question('\n= Escolha uma das opções = '))
+  option = parseInt(leia.question('\n= Escolha uma das opcoes = '))
 
   switch (option) {
     case 1:
@@ -146,7 +164,7 @@ do {
         console.log('= ( 0 ) - Voltar')
 
 
-        option2 = parseInt(leia.question('\n= Escolha uma das opções = '))
+        option2 = parseInt(leia.question('\n= Escolha uma das opcoes = '))
 
 
 
@@ -236,13 +254,26 @@ do {
         console.log("====================| Produtos Disponíveis: |=====================\n")
         console.log("Opção ====== Produto  =======================  Preço  ============\n")
 
+        let itemOpcao = 0
         for (const i in lista.listaLivros) {
           console.log((parseInt(i) + 1) + '\t' + lista.listaLivros[i].nome + '\t\t R$ ' + lista.listaLivros[i].preco)
+          itemOpcao +=1
         }
 
         console.log('\n0\tPara Voltar')
         console.log("==================================================================\n")
         option3 = parseInt(leia.question('Escolha uma das opçõs para adicionar ao carrinho: '))
+
+        if(isNaN(option3) || option3 > itemOpcao){
+          console.log('Valor inválido. escolha o valor numerico referente as opcoes disponiveis.')
+        }
+
+        console.log('option3 é : '+option3)
+        console.log('itemOpcao é : '+itemOpcao)
+
+
+      
+
 
         let nomeEscolhido
         let precoEscolhido
@@ -275,7 +306,7 @@ do {
 
 
         for (const i in paraCarrinho.carrinho) {
-          console.log((parseInt(i) + 1) + '\t' + paraCarrinho.carrinho[i].nome + '\t' + paraCarrinho.carrinho[i].quantidade + '\t R$ ' + paraCarrinho.carrinho[i].preco + '\t R$ ' + paraCarrinho.carrinho[i].precoTotal)
+          console.log((parseInt(i) + 1) + '\t' + paraCarrinho.carrinho[i].nome + '\t' + paraCarrinho.carrinho[i].quantidade + '\t R$ ' + paraCarrinho.carrinho[i].preco + '\t\t R$ ' + paraCarrinho.carrinho[i].precoTotal)
           subtotal += paraCarrinho.carrinho[i].precoTotal
         }
 
@@ -302,9 +333,9 @@ do {
             console.log(" 1- PIX            ")
             console.log(" 2- Cartao Credito(Rotativo)")
             console.log(" 3- Cartao Débito ")
-            console.log("\n================================================================\n")
+            console.log("\n=================================================================\n")
             console.log('0\tPara Voltar')
-            console.log("==================================================================\n")
+            console.log("=================================================================\n")
             option5 = parseInt(leia.question('Escolha uma das formas de pagamento: '))
             switch (option5) {
               case 1:
@@ -324,48 +355,36 @@ do {
                 break;
             }
 
-            console.log("\n\n=============+++++++  Livraria Jaca  +++++++===========\n")
-            console.log("-----------------------------------------------------------\n")
-            console.log("----------------------- CUPOM FISCAL ----------------------\n")
-            console.log("-----------------------------------------------------------\n")
-            console.log("ITEM --- EAN ------- DESCRICAO --- QTD --- UN ---- VLR UNI \n")
+            console.log("\n\n=================+++++++++  Livraria Jaca  ++++++++++=============\n")
+            console.log("------------------------------------------------------------------\n")
+            console.log("--------------------------- CUPOM FISCAL -------------------------\n")
+            console.log("------------------------------------------------------------------\n")
+            console.log("Ordem ====== Produto  ======== qtd ===== Preco ===== Preço Total =\n")
 
-
+            let ordem = 0
             for (const i in paraCarrinho.carrinho) {
-              console.log((parseInt(i) + 1) + '\t' + paraCarrinho.carrinho[i].nome + '\t' + paraCarrinho.carrinho[i].quantidade + '\t R$ ' + paraCarrinho.carrinho[i].preco + '\t R$ ' + paraCarrinho.carrinho[i].precoTotal)
-              
+              console.log((parseInt(i) + 1) + '\t' + paraCarrinho.carrinho[i].nome + '\t' + paraCarrinho.carrinho[i].quantidade + '\t R$ ' + paraCarrinho.carrinho[i].preco + '\t\t R$ ' + paraCarrinho.carrinho[i].precoTotal)
+              ordem +=1
             }
 
 
 
-            console.log("-----------------------------------------------------------\n")
-            console.log("QTD TOTAL DE ITENS                                 1")
-            console.log(`VALOR TOTAL                                   R$  ${subtotal}`)
-            console.log(`DESCONTO                                      R$     0`)
-            console.log(`VALOR A PAGAR                                 R$  ${subtotal}`)
-            console.log(`FORMA PAGTO:                                  ${formaPagto}\n`)
-            console.log("===========================================================\n")
+            console.log("------------------------------------------------------------------\n")
+            console.log("QTD TOTAL DE ITENS\t                                     "+ordem)
+            console.log(`VALOR TOTAL\t                                      R$  ${subtotal}`)
+            console.log(`DESCONTO\t                                      R$     0`)
+            console.log(`VALOR A PAGAR\t                                      R$  ${subtotal}`)
+            console.log(`FORMA PAGTO:\t                                        ${formaPagto}\n`)
+            console.log("==================================================================\n")
 
-            //PAREI AQUI. É PRECISO FAZER A LÓGICA PARA DEBITAR OS ITEND DO ESTOQUE.
-            // PENSO EM COPIAR O ULTIMO FORIN PARA PERCORRER O CARRINHO, PEGAR ID E QTD E VER COMO POSSO DEBITAR DO LISTAlIVRO.
 
-            let idped
-            let qtdped
 
-            for (const i in paraCarrinho.carrinho) {
-              
-              idped = paraCarrinho.carrinho[i].id
-              qtdped = paraCarrinho.carrinho[i].quantidade
+            //vou tirar os itens vendidos do estoque
+            
 
-                for (const j in lista.listaLivros) {
-                  if (idped == j) {
-                      lista.listaLivros[j].estoque -= qtdped                    
-                    
-                  }
-                }
-              
-            }
+            loja.venderLivros()
 
+           
 
 
 
@@ -383,9 +402,9 @@ do {
         }
 
 
+      } while (option3 != 0)
 
-
-      } while (option3 != 0);
+      
 
 
 
