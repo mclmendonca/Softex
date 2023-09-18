@@ -286,7 +286,7 @@ do {
         console.log("==================================================================\n")
 
         do {
-          simnao = leia.question('Escolha uma das opçõs para adicionar ao carrinho: (s/n) ')
+          simnao = leia.question('mais algum livro no carrinho? (s/n) ')
           simnao = simnao.toLowerCase()
 
           if (simnao != 's' && simnao != 'n') {
@@ -295,11 +295,69 @@ do {
         } while (simnao != 's' && simnao != 'n')
 
         if (simnao == 'n') {
-          console.log()
+          let option5
+          let formaPagto
+          do {
+            console.log("\n Formas de Pagto:")
+            console.log(" 1- PIX            ")
+            console.log(" 2- Cartao Credito(Rotativo)")
+            console.log(" 3- Cartao Débito ")
+            console.log("\n================================================================\n")
+            console.log('0\tPara Voltar')
+            console.log("==================================================================\n")
+            option5 = parseInt(leia.question('Escolha uma das formas de pagamento: '))
+            switch (option5) {
+              case 1:
+                formaPagto = 'PIX'
+                break;
+
+              case 2:
+                formaPagto = 'Crédito (Roatativo)'
+                break;
+
+              case 3:
+                formaPagto = 'Débito'
+                break;
+
+              default:
+                console.log('Opção inválida, por favor digite uma opção entre 1 e 3 ou 0 para voltar.')
+                break;
+            }
+
+            console.log("\n\n=============+++++++  Livraria Jaca  +++++++===========\n")
+            console.log("-----------------------------------------------------------\n")
+            console.log("----------------------- CUPOM FISCAL ----------------------\n")
+            console.log("-----------------------------------------------------------\n")
+            console.log("ITEM --- EAN ------- DESCRICAO --- QTD --- UN ---- VLR UNI \n")
+
+
+            for (const i in paraCarrinho.carrinho) {
+              console.log((parseInt(i) + 1) + '\t' + paraCarrinho.carrinho[i].nome + '\t' + paraCarrinho.carrinho[i].quantidade + '\t R$ ' + paraCarrinho.carrinho[i].preco + '\t R$ ' + paraCarrinho.carrinho[i].precoTotal)
+              subtotal += paraCarrinho.carrinho[i].precoTotal
+            }
+
+
+
+            console.log("-----------------------------------------------------------\n")
+            console.log("QTD TOTAL DE ITENS                                 1")
+            console.log(`VALOR TOTAL                                   R$  ${subtotal}`)
+            console.log(`DESCONTO                                      R$     0`)
+            console.log(`VALOR A PAGAR                                 R$  ${subtotal}`)
+            console.log(`FORMA PAGTO:                                  ${formaPagto}\n`)
+            console.log("===========================================================\n")
+
+            //PAREI AQUI. É PRECISO FAZER A LÓGICA PARA DEBITAR OS ITEND DO ESTOQUE.
+            // PENSO EM COPIAR O ULTIMO FORIN PARA PERCORRER O CARRINHO, PEGAR ID E QTD E VER COMO POSSO DEBITAR DO LISTAlIVRO.
+
+
+            option5 = 0
+
+          } while (option5 != 0);
+
+
+
+
         }
-
-
-        /////////////////////// PAREI AQUI. É PRECISO POR AS FORMAS DE PAGAMENTO E AO ESCOLHER FAZERUMA ESPÉCIE DE NFE E TIRAR OS ITENS VENDIDOS DO ESTOQUE. AÍ FINALIZA.
 
 
 
