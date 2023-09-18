@@ -333,7 +333,7 @@ do {
 
             for (const i in paraCarrinho.carrinho) {
               console.log((parseInt(i) + 1) + '\t' + paraCarrinho.carrinho[i].nome + '\t' + paraCarrinho.carrinho[i].quantidade + '\t R$ ' + paraCarrinho.carrinho[i].preco + '\t R$ ' + paraCarrinho.carrinho[i].precoTotal)
-              subtotal += paraCarrinho.carrinho[i].precoTotal
+              
             }
 
 
@@ -349,8 +349,31 @@ do {
             //PAREI AQUI. É PRECISO FAZER A LÓGICA PARA DEBITAR OS ITEND DO ESTOQUE.
             // PENSO EM COPIAR O ULTIMO FORIN PARA PERCORRER O CARRINHO, PEGAR ID E QTD E VER COMO POSSO DEBITAR DO LISTAlIVRO.
 
+            let idped
+            let qtdped
+
+            for (const i in paraCarrinho.carrinho) {
+              
+              idped = paraCarrinho.carrinho[i].id
+              qtdped = paraCarrinho.carrinho[i].quantidade
+
+                for (const j in lista.listaLivros) {
+                  if (idped == j) {
+                      lista.listaLivros[j].estoque -= qtdped                    
+                    
+                  }
+                }
+              
+            }
+
+
+
+
 
             option5 = 0
+            option3 = 0
+            paraCarrinho.carrinho = []
+
 
           } while (option5 != 0);
 
