@@ -118,14 +118,14 @@ const loja = new Loja()
 
 // coloquei esses livros para termos opcoes para apresentar ao professor.
 
-const book3 = new Livro('Hount of Baskervilles', 'Arthur Conan Doyle', 'Penguim', 200, 50)
-const book4 = new Livro('A Study in a Red', 'Arthur Conan Doyle', 'Penguim', 150, 30)
+const book3 = new Livro('Hount of Baskervilles', 'Arthur C. Doyle', 'Penguim', 200, 50)
+const book4 = new Livro('A Study in a Red', 'Arthur C. Doyle', 'Penguim', 150, 30)
 const book5 = new Livro('O Foguete da Morte', 'Ian Fleming', 'Eon', 100, 60)
-const book6 = new Livro('Diamantes sao Eternos', 'Sean Connery', 'Broccoli', 90, 10)
+const book6 = new Livro('Diamantes sao Eternos', 'Sean Connery', 'Brocoli', 90, 10)
 const book7 = new Livro('Viva e Deixe Morrer', 'Roger Moore', 'Wilson', 80, 60)
 const book8 = new Livro('O Amanha Nunca Morre', 'Pierce Brosnan', 'United', 150, 30)
-const book9 = new Livro('A Study in a Red', 'Arthur Conan Doyle', 'Penguim', 150, 30)
-const book10 = new Livro('Diario de um Banana', 'Banana', 'Brasil', 10, 600)
+const book9 = new Livro('A Study in a Red', 'Arthur C. Doyle', 'Penguim', 150, 30)
+const book10 = new Livro('Diario de um Banana', 'Banana   ', 'Brasil', 10, 600)
 lista.cadastrarLivro(book3)
 lista.cadastrarLivro(book4)
 lista.cadastrarLivro(book5)
@@ -194,7 +194,6 @@ do {
             preco = leia.question('Qual o Preco do livro? ')
 
 
-
             do {
               estoque = leia.question('Qual o Estoque do livro? ')
               if (isNaN(estoque)) {
@@ -225,6 +224,58 @@ do {
             // dentro do que foi procurado o usuario iria escolher qual dos titulos quer alterar. escolhedo o livro, 
             // apareceria outro menu para dizer qual dos atributos quer mexer e finalmente em outra tela ele digitaria o
             // valor a ser gravado. no fim a mensagem "Alteracao feita com sucesso".
+
+            let alterarLivro
+			
+          do {
+              console.log('\n=== Livros - Alteração Cadastral ===\n')
+              console.log("========================+++++++     Livraria Jaca   +++++++=========================\n")
+              console.log("=============================| Produtos Disponiveis: |==============================\n")
+              console.log("Id ==== Titulo ================ Autor ======== Editora ===== Preco ===== Estoque =\n")
+                            
+
+              for (const i in lista.listaLivros) {
+                console.log((parseInt(i) + 1) + '   ' + lista.listaLivros[i].nome + '     \t' + lista.listaLivros[i].autor+ '\t' + lista.listaLivros[i].editora+ '\t   ' + lista.listaLivros[i].preco+ '   \t' + lista.listaLivros[i].estoque)
+          
+              }
+              alterarLivro = 0
+              /*
+
+              Original de Tainara.
+              
+              console.log('= ( 1 ) - Procurar por título')
+              console.log('= ( 2 ) - Procurar por autor')
+              console.log('= ( 0 ) - voltar')
+    
+    
+              alterarLivro = parseInt(leia.question('\n= Escolha uma das opções = '))
+    
+    
+              if (alterarLivro = 1) {
+              console.log('\n=== Busca por título ===\n')
+              console.log()
+              tituloLivro = leia.question('\n= Digite o título do livro = ')
+
+                         
+              
+              listaLivros.indexOf(tituloLivro)
+              console.log('
+    
+              } if (alterarLivro = 2) {
+      
+            }
+            */
+    
+          } while (alterarLivro != 0)
+    
+    
+    //switch (alterar livro)
+      //case 1: // alterar titulo
+      //case 2: // alterar autor
+      //case 3: // alterar editora
+      //case 4: // alterar preco
+      //case 5: // alterar estoque
+    
 
             break;
 
