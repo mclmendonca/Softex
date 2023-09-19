@@ -38,7 +38,32 @@ class ListaLivros {
 
   }
 
-  alterarLivro() {
+  alterarLivro(param) {
+    switch (param) {
+      case 1:
+        
+        break;
+    
+      case 2:
+        
+        break;
+      
+      case 3:
+        
+        break;
+        
+      case 4:
+        
+        break;
+          
+      case 5:
+        
+        break;
+            
+      default:
+      
+        break;
+    }
 
   }
 }
@@ -228,43 +253,62 @@ do {
             let alterarLivro
 			
           do {
-              console.log('\n=== Livros - Alteração Cadastral ===\n')
+              console.log('\n========================== Livros - Alteração Cadastral ==========================\n')
               console.log("========================+++++++     Livraria Jaca   +++++++=========================\n")
               console.log("=============================| Produtos Disponiveis: |==============================\n")
               console.log("Id ==== Titulo ================ Autor ======== Editora ===== Preco ===== Estoque =\n")
-                            
+              
+              let itemOpcao2
 
               for (const i in lista.listaLivros) {
                 console.log((parseInt(i) + 1) + '   ' + lista.listaLivros[i].nome + '     \t' + lista.listaLivros[i].autor+ '\t' + lista.listaLivros[i].editora+ '\t   ' + lista.listaLivros[i].preco+ '   \t' + lista.listaLivros[i].estoque)
-          
+                itemOpcao2 +=1
               }
-              alterarLivro = 0
-              /*
-
-              Original de Tainara.
               
-              console.log('= ( 1 ) - Procurar por título')
-              console.log('= ( 2 ) - Procurar por autor')
-              console.log('= ( 0 ) - voltar')
-    
-    
+              console.log('\n0\tPara Voltar')
+              console.log("==================================================================\n")
+
               alterarLivro = parseInt(leia.question('\n= Escolha uma das opções = '))
-    
-    
-              if (alterarLivro = 1) {
-              console.log('\n=== Busca por título ===\n')
-              console.log()
-              tituloLivro = leia.question('\n= Digite o título do livro = ')
 
-                         
-              
-              listaLivros.indexOf(tituloLivro)
-              console.log('
-    
-              } if (alterarLivro = 2) {
-      
+              if( alterarLivro > 0 && alterarLivro <= itemOpcao2){
+                
+                let option6
+                do {
+                  
+
+                  console.log('\n========================== Livros - Alteração Cadastral ==========================\n')
+                  console.log()
+                  console.log('= ( 1 ) - Titulo')
+                  console.log('= ( 2 ) - Autor')
+                  console.log('= ( 3 ) - Editora')
+                  console.log('= ( 4 ) - Preco')
+                  console.log('= ( 5 ) - Estoque')
+                  console.log('= ( 0 ) - Voltar')
+                  
+                  option6 = parseInt(leia.question('\n= Qual campo você deseja fazer a alteração: '))
+
+                  if (option6 >=0 && option6 <=5) {
+                    lista.listaLivros.alterarLivro(option6)  
+                  } else {
+                    console.log('\nOpcao inválida, por favor digite uma das opcoes disponiveis.\n')
+                  }
+
+                  
+
+                } while (option6 != 0);
+                
+                
+
+
+
+              }else if(alterarLivro == 0){
+                alterarLivro = 0                
+                console.log('\nPedido Cancelado com Sucesso!\n')          
+            }else{
+              console.log('\nOpcao inválida, por favor digite uma das opcoes disponiveis.\n')
             }
-            */
+
+              
     
           } while (alterarLivro != 0)
     
