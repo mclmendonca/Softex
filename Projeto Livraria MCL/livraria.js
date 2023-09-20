@@ -38,34 +38,7 @@ class ListaLivros {
 
   }
 
-  alterarLivro(param) {
-    switch (param) {
-      case 1:
-        
-        break;
-    
-      case 2:
-        
-        break;
-      
-      case 3:
-        
-        break;
-        
-      case 4:
-        
-        break;
-          
-      case 5:
-        
-        break;
-            
-      default:
-      
-        break;
-    }
 
-  }
 }
 
 
@@ -213,16 +186,20 @@ do {
               }
             } while (!isNaN(autor));
 
-            editora = leia.question('Qual a Editora do livro? ')
+              editora = leia.question('Qual a Editora do livro? ')
 
+            do {
+              preco = leia.question('Qual o Preco do livro? ')  
+              if (isNaN(preco)) {
+                console.log('Por favor, digite numero(s).')
+              }
 
-            preco = leia.question('Qual o Preco do livro? ')
-
-
+            } while (isNaN(preco));
+            
             do {
               estoque = leia.question('Qual o Estoque do livro? ')
               if (isNaN(estoque)) {
-                console.log('Por favor, digite um nome.')
+                console.log('Por favor, digite numero(s).')
               }
             } while (isNaN(estoque));
 
@@ -288,7 +265,84 @@ do {
                   option6 = parseInt(leia.question('\n= Qual campo você deseja fazer a alteração: '))
 
                   if (option6 >=0 && option6 <=5) {
-                    lista.listaLivros.alterarLivro(option6)  
+                    let alteracao
+                    switch (option6) {
+                      case 1:
+                        console.log(`O Valor atual é ${lista.listaLivros[itemOpcao2].nome}`)
+                        alteracao = leia.question('Alterar para: ')
+
+                        lista.listaLivros[itemOpcao2].nome = alteracao 
+
+                        console.log('Livro alterado com sucesso! ')
+
+                        break;
+                    
+                      case 2:
+                        console.log(`O Valor atual é ${lista.listaLivros[itemOpcao2].autor}`)
+                        do {
+                          alteracao = leia.question('Alterar para: ')  
+                        } while (!isNaN(alteracao));
+                        
+                        lista.listaLivros[itemOpcao2].autor = alteracao
+
+                        console.log('Livro alterado com sucesso! ')
+
+                        break;
+                      
+                      case 3:
+                        console.log(`O Valor atual é ${lista.listaLivros[itemOpcao2].editora}`)
+                        alteracao = leia.question('Alterar para: ')
+
+                        lista.listaLivros[itemOpcao2].editora = alteracao
+
+                        console.log('Livro alterado com sucesso! ')
+
+                        break;
+                        
+                      case 4:
+                        console.log(`O Valor atual é ${lista.listaLivros[itemOpcao2].preco}`)
+                        do {
+                          alteracao = leia.question('Alterar para: ')  
+                          if (isNaN(alteracao)) {
+                            console.log('Por favor, digite numero(s).')
+                          }
+
+                        } while (isNaN(alteracao));
+
+                        lista.listaLivros[itemOpcao2].preco = alteracao
+
+                        console.log('Livro alterado com sucesso! ')
+                        
+
+                        break;
+                          
+                      case 5:
+                        console.log(`O Valor atual é ${lista.listaLivros[itemOpcao2].estoque}`)
+                        do {
+                          alteracao = leia.question('Alterar para: ')
+                          if (isNaN(alteracao)) {
+                            console.log('Por favor, digite numero(s).')
+                          }
+                          
+                        } while (isNaN(alteracao));
+
+                        lista.listaLivros[itemOpcao2].estoque = alteracao   
+                        
+                        console.log('Livro alterado com sucesso! ')
+
+                        break;
+                            
+                      default:
+                      
+                        break;
+
+                    }
+                    
+                    
+                    
+                
+
+
                   } else {
                     console.log('\nOpcao inválida, por favor digite uma das opcoes disponiveis.\n')
                   }
