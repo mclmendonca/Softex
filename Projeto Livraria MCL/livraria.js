@@ -34,7 +34,10 @@ class ListaLivros {
 
   }
 
-  deletarLivro() {
+  deletarLivro(index) {
+    this.listaLivros.splice(index,1)
+    return console.log('\nLivro deletado com sucesso\n')
+
 
   }
 
@@ -160,7 +163,14 @@ lista.cadastrarLivro(book10)
 let option
 do {
   console.clear()
-  console.log('\n=== Livraria ===\n')
+  console.log("   _.--.")
+  console.log(" .'   o   `.");
+  console.log("/    o    o \\");
+  console.log("|o     o    o|");
+  console.log("\\   o     o  /");
+  console.log(" `._o___o_.'");
+  
+  console.log('\n=== Livraria Jaca ===\n')
   console.log()
   console.log('= ( 1 ) - Livros')
   console.log('= ( 2 ) - Vender Livro')
@@ -233,9 +243,80 @@ do {
             // a ser alterado. seria assim (1) para procurar pelo titulo e (2) para procurar pelo autor e (0) para voltar
             // ao manu anterior. Depois de acessar esse menu e o sistema mostrar os titulos em tela do que se encaixa 
             // dentro do que foi procurado o usuario iria escolher qual dos titulos quer deletar(usando o menun numerico).
-            // no fim a mensagem "Livro deletado com sucesso".        
+            // no fim a mensagem "Livro deletado com sucesso".     
+            
+            
+            let deletarLivro
+            
+			
+            do {
+
+              console.log('\n========================== Livros - Alteracao Cadastral ==========================\n')
+              console.log("========================+++++++     Livraria Jaca   +++++++=========================\n")
+              console.log("=============================| Produtos Disponiveis: |==============================\n")
+              console.log("Id ==== Titulo ================ Autor ======== Editora ===== Preco ===== Estoque =\n")
+              
+              let itemOpcao3 = 0
+
+              for (const i in lista.listaLivros) {
+                console.log((parseInt(i) + 1) + '   ' + lista.listaLivros[i].nome + '     \t' + lista.listaLivros[i].autor+ '\t' + lista.listaLivros[i].editora+ '\t   ' + lista.listaLivros[i].preco+ '   \t' + lista.listaLivros[i].estoque)
+                itemOpcao3 +=1
+                console.log("------------------------------------------------------------------------------------")
+              }
+              
+              console.log('\n0\tPara Voltar')
+              console.log("==================================================================\n")
+
+              deletarLivro = parseInt(leia.question('\n= Escolha uma das opcoes para deletar = '))
+              
+                           
+                console.log('Tem certeza que deseja deletar: ')
+                console.log(" 0 - Cancelar  ")
+                console.log(" 1 - Deletar \n")
+                
+              let option7 = parseInt(leia.question(''))
+
+                console.log("\n=================================================================\n")
+                         
+                            
+                switch (option7) {
+        
+                  case 0:
+                    option7 = 0
+                    deletarLivro = 0
+                    console.log('\nDelete Cancelado!\n\n')
+        
+                    leia.question('Digite Qualquer Tecla para continuar...')
+                    break;
+        
+                  case 1:
+
+                    lista.deletarLivro(deletarLivro-1) 
+                   
+                    console.log("=================================================================\n")
+        
+                    leia.question('Digite Qualquer Tecla para continuar...')
+                    option7 = 0
+                    deletarLivro = 0
+                    option2 = 0
+                    break;
+                 
+                  default:
+                    console.log('opcao inválida, por favor digite 1 para deletar ou 0 para cancelar.')
+                    break;
+
+                }
+
+              
+
+            } while(deletarLivro != 0)
+
+
             break;
 
+            
+
+            
           case 3:
             // Se o cliente digitar 3 no segundo menu de Livros vamos alterar algum dos dados do livro no array ListaLivros.
             // penso que poderiamos criar aqui um outro nivel de menu dando duas opcoes do cliente porder achar o livro
@@ -247,7 +328,7 @@ do {
 
             let alterarLivro
 			
-          do {
+            do {
               console.log('\n========================== Livros - Alteracao Cadastral ==========================\n')
               console.log("========================+++++++     Livraria Jaca   +++++++=========================\n")
               console.log("=============================| Produtos Disponiveis: |==============================\n")
@@ -258,12 +339,13 @@ do {
               for (const i in lista.listaLivros) {
                 console.log((parseInt(i) + 1) + '   ' + lista.listaLivros[i].nome + '     \t' + lista.listaLivros[i].autor+ '\t' + lista.listaLivros[i].editora+ '\t   ' + lista.listaLivros[i].preco+ '   \t' + lista.listaLivros[i].estoque)
                 itemOpcao2 +=1
+                console.log("------------------------------------------------------------------------------------")
               }
               
               console.log('\n0\tPara Voltar')
               console.log("==================================================================\n")
 
-              alterarLivro = parseInt(leia.question('\n= Escolha uma das opcoes = '))
+              alterarLivro = parseInt(leia.question('\n= Escolha uma das opcoes para alterar = '))
               
 
               if( alterarLivro > 0 && alterarLivro <= itemOpcao2){
@@ -401,15 +483,8 @@ do {
 
               
     
-          } while (alterarLivro != 0)
+            } while (alterarLivro != 0)
     
-    
-    //switch (alterar livro)
-      //case 1: // alterar titulo
-      //case 2: // alterar autor
-      //case 3: // alterar editora
-      //case 4: // alterar preco
-      //case 5: // alterar estoque
     
 
             break;
@@ -450,6 +525,7 @@ do {
         for (const i in lista.listaLivros) {
           console.log((parseInt(i) + 1) + '\t' + lista.listaLivros[i].nome + '\t\t R$ ' + lista.listaLivros[i].preco)
           itemOpcao +=1
+          console.log("------------------------------------------------------------------")
         }
 
         console.log('\n0\tPara Voltar')
@@ -755,8 +831,6 @@ do {
 } while (devolverLivro != 0)
   break;
 
-
-
       break;
 
     case 4:
@@ -785,17 +859,10 @@ do {
       break;
     }
 
-
-
 } while (option != 0)
-
-
-
 
 function newFunction() {
   Console.log("|=======================Relatório de Estoque=======================================|")
 }
-
-
 
 
