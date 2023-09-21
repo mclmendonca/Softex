@@ -70,6 +70,24 @@ class Loja {
 
   devolucao() {
 
+    let idped
+    let qtdDev
+
+    for (const i in paraCarrinho.carrinho) {
+      
+      idped = paraCarrinho.carrinho[i].id
+      qtdDev = paraCarrinho.carrinho[i].quantidade
+
+        for (const j in lista.listaLivros) {
+          if (idped == j) {
+              lista.listaLivros[j].estoque += qtdDev                
+            
+          }
+        }
+      
+    }
+    
+
   }
 
   emitirRelatorio() {
@@ -79,7 +97,7 @@ class Loja {
 }
 
 
-//Criei essa classe para criar os itens do carrinho, usei o conceito de herança aqui
+//Criei essa classe para criar os itens do carrinho, usei o conceito de heranca aqui
 class ItemCarrinho extends Livro {
 
   constructor(id, qtd, nome, preco, precoTotal) {
@@ -108,7 +126,7 @@ class Carrinho {
 //colocando na variável leia algo que vai ajudar a conseguirmos ler aquilo que o cliente responde na tela.
 var leia = require('readline-sync')
 
-//espaço para estanciar o necessario para o bom funcionamento do programa orientado a objeto
+//espaco para estanciar o necessario para o bom funcionamento do programa orientado a objeto
 const lista = new ListaLivros()
 const paraCarrinho = new Carrinho()
 const loja = new Loja()
@@ -141,7 +159,7 @@ lista.cadastrarLivro(book10)
 // opcoes disponiveis.
 let option
 do {
-  
+  console.clear()
   console.log('\n=== Livraria ===\n')
   console.log()
   console.log('= ( 1 ) - Livros')
@@ -177,7 +195,7 @@ do {
             // usuario vai responder a medida que o sistema pergunta a ele: precisamos pensar sobre 
             // cada problema que a pergunta implicar e tratar os possiveis erros: aqui eu uso as 
             // variáveis que eu declarei lá no inicio do código
-            titulo = leia.question('Qual o Titulo do livro? ')
+            titulo = leia.question('\nQual o Titulo do livro? ')
 
             do {
               autor = leia.question('Qual o Autor do livro? ')
@@ -230,12 +248,12 @@ do {
             let alterarLivro
 			
           do {
-              console.log('\n========================== Livros - Alteração Cadastral ==========================\n')
+              console.log('\n========================== Livros - Alteracao Cadastral ==========================\n')
               console.log("========================+++++++     Livraria Jaca   +++++++=========================\n")
               console.log("=============================| Produtos Disponiveis: |==============================\n")
               console.log("Id ==== Titulo ================ Autor ======== Editora ===== Preco ===== Estoque =\n")
               
-              let itemOpcao2
+              let itemOpcao2 = 0
 
               for (const i in lista.listaLivros) {
                 console.log((parseInt(i) + 1) + '   ' + lista.listaLivros[i].nome + '     \t' + lista.listaLivros[i].autor+ '\t' + lista.listaLivros[i].editora+ '\t   ' + lista.listaLivros[i].preco+ '   \t' + lista.listaLivros[i].estoque)
@@ -245,7 +263,8 @@ do {
               console.log('\n0\tPara Voltar')
               console.log("==================================================================\n")
 
-              alterarLivro = parseInt(leia.question('\n= Escolha uma das opções = '))
+              alterarLivro = parseInt(leia.question('\n= Escolha uma das opcoes = '))
+              
 
               if( alterarLivro > 0 && alterarLivro <= itemOpcao2){
                 
@@ -253,7 +272,7 @@ do {
                 do {
                   
 
-                  console.log('\n========================== Livros - Alteração Cadastral ==========================\n')
+                  console.log('\n========================== Livros - Alteracao Cadastral ==========================\n')
                   console.log()
                   console.log('= ( 1 ) - Titulo')
                   console.log('= ( 2 ) - Autor')
@@ -262,73 +281,91 @@ do {
                   console.log('= ( 5 ) - Estoque')
                   console.log('= ( 0 ) - Voltar')
                   
-                  option6 = parseInt(leia.question('\n= Qual campo você deseja fazer a alteração: '))
+                  option6 = parseInt(leia.question('\n= Qual campo você deseja fazer a alteracao: '))
 
                   if (option6 >=0 && option6 <=5) {
+                    alterarLivro = (alterarLivro-1)
                     let alteracao
                     switch (option6) {
                       case 1:
-                        console.log(`O Valor atual é ${lista.listaLivros[itemOpcao2].nome}`)
-                        alteracao = leia.question('Alterar para: ')
 
-                        lista.listaLivros[itemOpcao2].nome = alteracao 
+                        console.log(`O Valor atual é "${lista.listaLivros[alterarLivro].nome}"`)
+                        
+                        alteracao = leia.question('\nAlterar para: ')
 
-                        console.log('Livro alterado com sucesso! ')
+                        lista.listaLivros[alterarLivro].nome = alteracao 
+
+                        console.log('\nLivro alterado com sucesso! ')
+
+                        option6 = 0
+                        alterarLivro = 0
 
                         break;
                     
                       case 2:
-                        console.log(`O Valor atual é ${lista.listaLivros[itemOpcao2].autor}`)
+                        console.log(`O Valor atual é "${lista.listaLivros[alterarLivro].autor}"`)
                         do {
-                          alteracao = leia.question('Alterar para: ')  
+                          alteracao = leia.question('\nAlterar para: ')  
                         } while (!isNaN(alteracao));
                         
-                        lista.listaLivros[itemOpcao2].autor = alteracao
+                        lista.listaLivros[alterarLivro].autor = alteracao
 
-                        console.log('Livro alterado com sucesso! ')
+                        console.log('\nLivro alterado com sucesso! ')
+
+                        option6 = 0
+                        alterarLivro = 0
 
                         break;
                       
                       case 3:
-                        console.log(`O Valor atual é ${lista.listaLivros[itemOpcao2].editora}`)
-                        alteracao = leia.question('Alterar para: ')
+                        console.log(`O Valor atual é "${lista.listaLivros[alterarLivro].editora}"`)
+                        alteracao = leia.question('\nAlterar para: ')
 
-                        lista.listaLivros[itemOpcao2].editora = alteracao
+                        lista.listaLivros[alterarLivro].editora = alteracao
 
-                        console.log('Livro alterado com sucesso! ')
+                        console.log('\nLivro alterado com sucesso! ')
+
+                        option6 = 0
+                        alterarLivro = 0
 
                         break;
                         
                       case 4:
-                        console.log(`O Valor atual é ${lista.listaLivros[itemOpcao2].preco}`)
+                        console.log(`O Valor atual é "${lista.listaLivros[alterarLivro].preco}"`)
                         do {
-                          alteracao = leia.question('Alterar para: ')  
+                          alteracao = leia.question('\nAlterar para: ')  
                           if (isNaN(alteracao)) {
-                            console.log('Por favor, digite numero(s).')
+                            console.log('\nPor favor, digite numero(s).')
                           }
 
                         } while (isNaN(alteracao));
 
-                        lista.listaLivros[itemOpcao2].preco = alteracao
+                        lista.listaLivros[alterarLivro].preco = alteracao
 
-                        console.log('Livro alterado com sucesso! ')
+                        console.log('\nLivro alterado com sucesso! ')
+
+                        option6 = 0
+                        alterarLivro = 0
                         
 
                         break;
                           
                       case 5:
-                        console.log(`O Valor atual é ${lista.listaLivros[itemOpcao2].estoque}`)
+                        console.log(`O Valor atual é "${lista.listaLivros[alterarLivro].estoque}"`)
                         do {
-                          alteracao = leia.question('Alterar para: ')
+                          alteracao = leia.question('\nAlterar para: ')
                           if (isNaN(alteracao)) {
-                            console.log('Por favor, digite numero(s).')
+                            console.log('\nPor favor, digite numero(s).')
                           }
                           
                         } while (isNaN(alteracao));
 
-                        lista.listaLivros[itemOpcao2].estoque = alteracao   
+                        lista.listaLivros[alterarLivro].estoque = alteracao   
                         
-                        console.log('Livro alterado com sucesso! ')
+                        console.log('\nLivro alterado com sucesso! ')
+
+                        option6 = 0
+                        alterarLivro = 0
 
                         break;
                             
@@ -357,7 +394,7 @@ do {
 
               }else if(alterarLivro == 0){
                 alterarLivro = 0                
-                console.log('\nPedido Cancelado com Sucesso!\n')          
+                console.log('\nVoltando...\n')          
             }else{
               console.log('\nOpcao inválida, por favor digite uma das opcoes disponiveis.\n')
             }
@@ -465,8 +502,6 @@ do {
         console.log("\n===================================================== SUBTOTAL ===")
         console.log('\t\t\t\t\t\t\t R$ ' + subtotal)
         console.log("==================================================================\n")
-        //console.log('\n0\tPara Voltar')
-        //console.log("==================================================================\n")
 
         do {
           simnao = leia.question('mais algum livro no carrinho? (s/n) ')
@@ -488,7 +523,9 @@ do {
             console.log("\n=================================================================\n")
             console.log('0\tPara cancelar o pedido')
             console.log("=================================================================\n")
+
             option5 = parseInt(leia.question('Escolha uma das formas de pagamento: '))
+
             switch (option5) {
 
               case 0:
@@ -536,10 +573,11 @@ do {
               console.log(`VALOR TOTAL\t                                      R$  ${subtotal}`)
               console.log(`DESCONTO\t                                      R$     0`)
               console.log(`VALOR A PAGAR\t                                      R$  ${subtotal}`)
-              console.log(`FORMA PAGTO:\t                                        ${formaPagto}`)
+              console.log(`FORMA PAGTO:\t                                         ${formaPagto}`)
               console.log("==================================================================\n\n\n")
   
               
+              leia.question('Digite Qualquer Tecla para continuar...')
 
               //vou tirar os itens vendidos do estoque
                 
@@ -578,25 +616,186 @@ do {
       // selecionar o usuario informaria a quantidade a ser devolvida e somariamos ele ao nosso estoque. no fim a mensagem
       // "devolvido com sucesso".
 
+      let devolverLivro
+			
+      do {
+          console.log('\n========================== Livros - Devolução de Livro ==========================\n')
+          console.log("========================+++++++     Livraria Jaca   +++++++=========================\n")
+          console.log("=============================| Escolha um opção do Catálogo: |==============================\n")
+        console.log("Id ===== Titulo =========== Estoque | \n")
+        
+    let itemOpcao = 0
+    for (const i in lista.listaLivros) {
+            console.log((parseInt(i) + 1) + '   ' +  lista.listaLivros[i].nome + '  \t   '   + lista.listaLivros[i].estoque)
+            console.log(                                                                                                                       )
+            itemOpcao +=1
+            console.log("------------------------------------")
+          }
+
+    console.log('\n0\tPara Voltar\n')
+    console.log("==================================================================\n")
+    devolverLivro = parseInt(leia.question('Escolha uma das opcos para Devolucao: '))
+
+       
+
+
+
+    if( devolverLivro > 0 && devolverLivro <= itemOpcao){
+        
+
+    let nomeEscolhido
+    let precoEscolhido
+    let precoTotal
+    let estoqueEscolhido
+    let quantidade
+      
+    do {
+      quantidade = parseInt(leia.question('\nqual a quantidade? '))
+    } while (isNaN(quantidade))
+
+    for (const i in lista.listaLivros) {
+      if (i == (devolverLivro - 1)) {
+        nomeEscolhido = lista.listaLivros[i].nome
+        estoqueEscolhido = lista.listaLivros[i].estoque
+      }
+    }  
+
+     
+      let selecionado = new ItemCarrinho((devolverLivro - 1), quantidade, nomeEscolhido, precoEscolhido, precoTotal)
+    paraCarrinho.inserirCarrinho(selecionado)
+
+    let simnao1
+    let subtotal = 0
+
+    console.clear()
+    console.log("===============+++++++     Livraria Jaca   +++++++================\n")
+    console.log("=====================|     Dados Devolucao   |====================\n")
+    console.log("ID ====== Produto  ======== qtd ========\n")
+
+
+    for (const i in paraCarrinho.carrinho) {
+      console.log((parseInt(i) + 1) + '\t' + paraCarrinho.carrinho[i].nome + '\t' + paraCarrinho.carrinho[i].quantidade)
+      console.log("------------------------------------")
+    }
+
+    console.log("\n==================================================================")
+    
+    console.log("\n")
+    
+
+    do {
+      simnao1 = leia.question('Deseja incluir outro livro? (s/n) ')
+      simnao1 = simnao1.toLowerCase()
+       console.log("\n=================================================================\n")
+      if (simnao1 != 's' && simnao1 != 'n') {
+        console.log('Por Favor, digite S para SIM ou N para NaO.')
+      }
+    } while (simnao1 != 's' && simnao1 != 'n')
+
+    if (simnao1 == 'n') {
+      let option55
+      
+      do {
+        
+        console.log(" 0 - Cancelar  ")
+        console.log(" 1 - Finalizar \n")
+        
+        option55 = parseInt(leia.question('Escolha uma das opcoes: '))
+        console.log("\n=================================================================\n")
+                 
+                    
+        switch (option55) {
+
+          case 0:
+            option55 = 0
+            devolverLivro = 0
+            paraCarrinho.carrinho = []
+            console.log('\nDevolucao Cancelada!\n\n')
+
+            leia.question('Digite Qualquer Tecla para continuar...')
+            break;
+
+          case 1:
+            console.log('Devolucao Finalizada com sucesso!')
+            console.log("=================================================================\n")
+
+            leia.question('Digite Qualquer Tecla para continuar...')
+            break;
+         
+          default:
+            console.log('opcao inválida, por favor digite uma opcao entre 1 e 3 ou 0 para voltar.')
+            break;
+        }
+
+        if (option55 > 0 && option55 <=2) {
+                  
+          //adicionar os itens ao estoque
+          loja.devolucao()  
+           
+          option55 = 0
+          devolverLivro = 0
+          paraCarrinho.carrinho = []
+        }
+
+
+      } while (option55 != 0);
+
+
+    }
+
+    }else if(devolverLivro == 0){
+        devolverLivro = 0
+        paraCarrinho.carrinho = []
+        console.log('\nDevolucao Cancelada!\n')          
+      }else{
+      console.log('\nOpcao inválida, por favor digite uma das opcoes disponiveis.\n')
+    }
+
+
+} while (devolverLivro != 0)
+  break;
+
+
+
       break;
 
     case 4:
       // Se o cliente digitar  4 no primeiro menu nós exibimos a lista de produtos cadastrados com todas as informacoes
       // do produto. se pudermos caprichar e dar uma cara de relatório ao resultado... melhor.
-      for (const iterator of lista.listaLivros) {
-        console.log(iterator)
-      }
+      
+
+      console.log("                           Relatório de Estoque\n")
+      console.log("Id ==== Titulo ================ Autor ======== Editora ===== Preco ===== Estoque =\n")
+              
+              let itemOpcao22
+
+              for (const i in lista.listaLivros) {
+                
+                console.log((parseInt(i) + 1) + '   ' + lista.listaLivros[i].nome + '     \t' + lista.listaLivros[i].autor+ '\t' + lista.listaLivros[i].editora+ '\t   ' + lista.listaLivros[i].preco+ '   \t' + lista.listaLivros[i].estoque)               
+                itemOpcao22 +=1
+              console.log("---------------------------------------------------------------------------------------")
+              }
+
+              leia.question('Digite Qualquer Tecla para continuar...')
 
       break;
 
     default:
       console.log('opcao inválida, por favor digite uma opcao entre 1 e 4 ou 0 para sair.')
       break;
-  }
+    }
 
 
 
 } while (option != 0)
+
+
+
+
+function newFunction() {
+  Console.log("|=======================Relatório de Estoque=======================================|")
+}
+
 
 
 
