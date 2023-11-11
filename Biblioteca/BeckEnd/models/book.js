@@ -24,7 +24,8 @@ const book = mongoose.model(
         }, 
         images:{
           type: Array
-        }   
+        },
+        user: Object,   
       },
       { timestamps: true},
     ),
