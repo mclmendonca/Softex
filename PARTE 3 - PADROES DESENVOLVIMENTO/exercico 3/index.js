@@ -28,7 +28,7 @@ var SistemaSeguranca = (function () {
 // Programa principal
 var agenteSecreto = SistemaSeguranca.getInstance();
 
-
+var leia = require('readline-sync')
 
 
 console.log('======= MI7 System =======')
