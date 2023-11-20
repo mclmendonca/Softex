@@ -30,6 +30,7 @@ var SistemaSeguranca = (function () {
 var acess = false
 var agenteSecreto = SistemaSeguranca.getInstance();
 
+//Instalar o readline-sync  para poder ler a senha que voce digitar no node. npm install readline-sync
 var leia = require('readline-sync')
 
 do {
