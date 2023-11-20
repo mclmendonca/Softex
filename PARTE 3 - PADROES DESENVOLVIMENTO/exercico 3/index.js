@@ -10,6 +10,7 @@ var SistemaSeguranca = (function () {
   SistemaSeguranca.prototype.acessarBaseSecreta = function (senha) {
     if (senha === this.senhaBaseSecreta) {
       console.log("Acesso concedido à base secreta!");
+      acess = true
     } else {
       console.log("Acesso negado! Senha incorreta.");
     }
@@ -26,17 +27,22 @@ var SistemaSeguranca = (function () {
 })();
 
 // Programa principal
+var acess = false
 var agenteSecreto = SistemaSeguranca.getInstance();
 
 var leia = require('readline-sync')
 
+do {
 
-console.log('======= MI7 System =======')
-console.log('====== Base Secreta ======')
-console.log('Digite a senha de acesso: ')
+  console.log('======= MI7 System =======')
+  console.log('====== Base Secreta ======')
+  senha = leia.question('Digite a senha de acesso: ')
 
-// Tentativa de acesso à base secreta
-agenteSecreto.acessarBaseSecreta("senha123"); // Acesso concedido à base secreta!
+  // Tentativa de acesso à base secreta
+  agenteSecreto.acessarBaseSecreta(senha);
+  
+} while (acess == false);
+ // Acesso concedido à base secreta!
 
 // Tentativa de acesso com senha incorreta
-agenteSecreto.acessarBaseSecreta("senha456"); // Acesso negado! Senha incorreta.
+//agenteSecreto.acessarBaseSecreta("senha456"); // Acesso negado! Senha incorreta.
