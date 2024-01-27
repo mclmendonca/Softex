@@ -1,0 +1,21 @@
+1) select * from transacoes;
+
+2) select id as codigo from produtos;
+
+3) select * from produtos where valor > 100;
+
+4) select * from produtos order by valor desc;
+
+5) SELECT AVG(Valor) AS Media FROM Exemplo; 
+   SELECT MAX(Valor) AS ValorMaximo FROM Exemplo; 
+   SELECT MIN(Valor) AS ValorMinimo FROM Exemplo;
+   SELECT COUNT(*) AS QuantidadeRegistros FROM Exemplo;
+
+6) SELECT Produto, AVG(Valor) AS MediaValor FROM Transacoes GROUP BY Produto;
+
+7) SELECT Categoria, COUNT(*) AS QuantidadeTotalVendida, SUM(Valor) AS ValorTotalVendas,   AVG(Valor) AS MediaPorTransacao
+FROM Vendas
+GROUP BY Categoria;
+
+
+
