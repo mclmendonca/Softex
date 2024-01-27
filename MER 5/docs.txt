@@ -1,0 +1,97 @@
+-- criando tabelas:
+
+-- Tabela Autores
+CREATE TABLE Autores (
+    AutorID INT PRIMARY KEY,
+    Nome VARCHAR(100),
+    Nacionalidade VARCHAR(50)
+);
+
+-- Tabela Livros
+CREATE TABLE Livros (
+    LivroID INT PRIMARY KEY,
+    Titulo VARCHAR(150),
+    AnoPublicacao INT,
+    AutorID INT,
+    FOREIGN KEY (AutorID) REFERENCES Autores(AutorID)
+);
+
+
+1) inserindo dados nas tabelas
+
+-- Inserir autores
+INSERT INTO Autores (AutorID, Nome, Nacionalidade) VALUES
+(1, 'Marcelo Mendonca', 'Brasileiro'),
+(2, 'Ian Fleming', 'Inglês'),
+(3, 'Jean Paul', 'Brasileiro');
+
+-- Inserir livros
+INSERT INTO Livros (LivroID, Titulo, AnoPublicacao, AutorID) VALUES
+(101, 'Só Se Vive Duas Vezes', 2000, 1),
+(102, 'Viva e Deixe Morrer', 2005, 1),
+(103, 'Goldfinger', 2010, 2),
+(104, 'Goldeneye', 2015, 2),
+(105, 'Amanhã Nunca Morre', 2020, 3);
+
+
+2) consultar para listar todos os autores e seus livros associados
+
+
+SELECT Autores.Nome AS Autor, Livros.Titulo
+FROM Autores
+JOIN Livros ON Autores.AutorID = Livros.AutorID;
+
+
+3) Consulta usando INNER JOIN para listar detalhes dos livros e autores correspondentes:
+
+
+SELECT Autores.Nome AS Autor, Livros.Titulo, Livros.AnoPublicacao
+FROM Autores
+JOIN Livros ON Autores.AutorID = Livros.AutorID;
+
+
+4) Consulta usando LEFT JOIN para exibir todos os autores, independentemente de terem livros associados:
+
+SELECT Autores.Nome AS Autor, Livros.Titulo, Livros.AnoPublicacao
+FROM Autores
+LEFT JOIN Livros ON Autores.AutorID = Livros.AutorID;
+
+
+5) Consulta para listar autores e livros, restrita a uma nacionalidade específica (por exemplo, Brasileiro):
+
+SELECT Autores.Nome AS Autor, Livros.Titulo
+FROM Autores
+JOIN Livros ON Autores.AutorID = Livros.AutorID
+WHERE Autores.Nacionalidade = 'Brasileiro';
+
+6) Consulta que conta quantos livros cada autor escreveu:
+
+SELECT Autores.Nome AS Autor, COUNT(Livros.LivroID) AS QuantidadeLivros
+FROM Autores
+LEFT JOIN Livros ON Autores.AutorID = Livros.AutorID
+GROUP BY Autores.Nome;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
