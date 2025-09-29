@@ -16,8 +16,6 @@ class Livro {
     this.preco = preco
     this.estoque = estoque
   }
-
-
 }
 
 // classe onde eu crio um array para colocar todos os livros cadastrados. coloquei também os métodos cadastrar livro,
