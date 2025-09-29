@@ -1,4 +1,4 @@
-class Pessoa {
+class Pessoas {
     nome: string;
     idade: number
     constructor(nome:string, idade:number) {
@@ -10,5 +10,5 @@ class Pessoa {
 
 
 
-let marcelo = new Pessoa('marcelo', 18)
-let almir = new Pessoa('almir', 20)
+let marcelo = new Pessoas('marcelo', 18)
+let almir = new Pessoas('almir', 20)
