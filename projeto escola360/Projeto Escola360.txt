@@ -1,0 +1,173 @@
+Abaixo está o material pronto para apresentação (documento ou slide), com:
+
+Resumo do projeto e backlog
+
+Aplicação ao modelo cascata (fase por requisito)
+
+Fluxo de execução
+
+Justificativas e reflexões finais
+
+🏫 Projeto: Escola360
+
+Objetivo: Informatizar os processos escolares (cadastro, notas, frequência, documentos oficiais, comunicação e relatórios).
+Usuários: Secretarias, coordenação/direção, professores, responsáveis/alunos e órgãos de controle.
+Problema: Processos manuais e despadronizados, com erros e retrabalho.
+Solução: Web app centralizado que automatiza cadastros, notas, boletins, relatórios e comunicação.
+
+📋 Backlog (resumo)
+Requisitos Funcionais (RF)
+Código	Requisito Funcional	Prioridade
+RF01	Cadastro de alunos, turmas e disciplinas	Alta
+RF02	Matrícula e vínculos aluno-turma	Alta
+RF03	Lançamento de notas e presenças	Alta
+RF04	Geração automática de boletim PDF com QR de validação	Alta
+RF05	Geração de histórico escolar em PDF	Média
+RF06	Mural de avisos para responsáveis	Média
+RF07	Comunicação entre professor e responsável	Média
+RF08	Relatórios de desempenho e frequência	Alta
+RF09	Exportação de dados CSV/PDF	Média
+RF10	Perfis e permissões de acesso	Alta
+RF11	Trilhas de auditoria	Média
+RF12	Integração com assinatura digital (ICP-Brasil)	Baixa
+RF13	Calendário escolar com lembretes	Média
+RF14	Recuperação de senha e autenticação segura	Alta
+RF15	Dashboard administrativo	Média
+Requisitos Não Funcionais (RNF)
+Código	Requisito Não Funcional	Prioridade
+RNF01	Sistema web responsivo	Alta
+RNF02	Interface intuitiva e acessível	Alta
+RNF03	Segurança conforme LGPD	Alta
+RNF04	Autenticação com JWT	Alta
+RNF05	Disponibilidade mínima de 99%	Alta
+RNF06	Backup diário automatizado	Média
+RNF07	Desempenho: carregamento em até 3s	Alta
+RNF08	Escalabilidade horizontal	Média
+RNF09	Logs de auditoria criptografados	Alta
+RNF10	Compatibilidade com navegadores modernos	Média
+🔄 Aplicação ao Modelo de Ciclo de Vida Cascata
+Fase do Modelo	Atividades	Requisitos Envolvidos	Entregáveis
+1. Levantamento e Análise de Requisitos	Entrevistas com secretaria, coordenação, professores e responsáveis; documentação de necessidades.	RF01–RF15, RNF01–RNF10	Documento de requisitos, backlog priorizado
+2. Design do Sistema	Criação dos fluxos, wireframes e arquitetura (camadas MVC, banco de dados, APIs, autenticação).	RF01–RF10, RNF01–RNF04	Diagramas UML, protótipos de interface, modelo de dados
+3. Implementação (Codificação)	Desenvolvimento incremental por módulos: cadastro, diário, boletim, mural, relatórios, permissões.	RF01–RF10, RNF01–RNF07	Código-fonte, testes unitários
+4. Testes (Integração e Validação)	Testes de usabilidade, segurança (LGPD), carga e integração entre módulos.	RF03–RF09, RNF03–RNF09	Relatórios de teste, correções de bugs
+5. Implantação e Manutenção	Instalação em servidor, treinamento de usuários, suporte e atualizações.	RF04–RF15, RNF05–RNF10	Sistema em produção, plano de manutenção
+⚙️ Simulação da Ordem de Execução (Cascata)
+
+Análise: definir requisitos e escopo (reuniões e backlog final).
+
+Design: desenhar telas e banco de dados; validar com usuários.
+
+Implementação:
+
+Módulo 1: Cadastros e matrículas (RF01–RF02)
+
+Módulo 2: Diário de classe (RF03)
+
+Módulo 3: Boletim e histórico PDF (RF04–RF05)
+
+Módulo 4: Comunicação e mural (RF06–RF07)
+
+Módulo 5: Relatórios e exportações (RF08–RF09)
+
+Módulo 6: Perfis, permissões e segurança (RF10–RF12)
+
+Módulo 7: Calendário e notificações (RF13–RF15)
+
+Testes: módulo a módulo → integração total.
+
+Implantação: versão beta → treinamento → lançamento oficial.
+
+Manutenção: correções e melhorias.
+
+🧩 Por que escolhemos o modelo Cascata?
+
+Estrutura clara e fácil de acompanhar para grupos iniciantes.
+
+Ideal para projetos com requisitos bem definidos (como o Escola360).
+
+Facilita documentação e rastreabilidade de requisitos.
+
+✅ Vantagens
+
+Controle rígido de etapas e entregas.
+
+Boa adequação para projetos institucionais (educação).
+
+Cada fase tem entregáveis claros e documentação forte.
+
+⚠️ Dificuldades
+
+Pouca flexibilidade para mudanças de requisito durante o processo.
+
+Testes e validações ocorrem tardiamente.
+
+Pode atrasar entregas se houver retrabalho em fases anteriores.
+
+💬 Reflexão Final
+
+O modelo Cascata funciona melhor em projetos médios e grandes com escopo estável, como o Escola360, onde os processos escolares e exigências legais são bem definidos.
+Para projetos muito pequenos ou que exigem mudanças frequentes, um modelo ágil (Scrum ou Kanban) seria mais adequado.
+
+💡 Sugestão de Entrega Visual
+
+Você pode montar o artefato em:
+
+Draw.io ou Lucidchart: criar um fluxograma com as fases do cascata e “cards” dos requisitos em cada uma.
+
+Google Docs/Word: inserir a tabela acima e um diagrama simples.
+
+Miro: usar colunas para cada fase e colocar os requisitos (post-its) nelas.
+
+
+🧠 Como montar o diagrama no Miro
+
+Entre no Miro:
+Vá para https://miro.com
+ e crie um board novo (gratuito).
+
+Adicione as Fases do Cascata:
+
+Use a ferramenta “Shape” (Retângulo) para criar 5 blocos verticais ou em degraus:
+
+Análise de Requisitos
+
+Design do Sistema
+
+Implementação (Codificação)
+
+Testes e Validação
+
+Implantação e Manutenção
+
+Adicione os Requisitos (RF e RNF):
+
+Dentro de cada fase, insira notas ou caixas menores (post-its).
+
+Escreva os códigos dos requisitos, como no exemplo da imagem:
+
+“RF01 – Cadastro de Alunos”
+
+“RNF03 – Segurança LGPD”, etc.
+
+Use cores diferentes:
+
+Azul = Requisitos Funcionais (RF)
+
+Verde = Requisitos Não Funcionais (RNF)
+
+Conecte as Fases:
+
+Use setas para indicar o fluxo de cima para baixo (Análise → Design → Implementação → Testes → Implantação).
+
+Adicione Títulos e Legenda:
+
+No topo, coloque “Modelo Cascata – Projeto Escola360”.
+
+No rodapé, uma legenda com o significado das cores (RF e RNF).
+
+Dica Visual:
+
+Mantenha o espaçamento uniforme e alinhe os blocos.
+
+Use a ferramenta “Frames” do Miro para agrupar cada fase.
