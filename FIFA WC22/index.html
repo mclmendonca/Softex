@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Copa do Mundo FIFA 2022 – Home</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- 1 HEADER -->
+  <header class="header">
+    <div class="container header__container">
+      <a href="#" class="logo-fifa" aria-label="FIFA">
+        <img src="assets/images/logo-fifa.png" alt="FIFA" />
+      </a>
+
+      <button class="menu-mobile" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="menu-desktop" aria-label="Menu principal">
+        <a href="#inicio" class="active">Início</a>
+        <a href="#grupos">Grupos</a>
+        <a href="#partidas">Partidas</a>
+        <a href="assistir.html">Assistir</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 2 BANNER -->
+  <section id="inicio" class="banner">
+    <div class="banner__overlay">
+      <div class="container banner__content">
+        <a href="#" class="logowc22" aria-label="WC26">
+          <img src="assets/images/logowc22.png" alt="Copa do Mundo FIFA 2022" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 SECTION-GRUPOS -->
+  <section id="grupos" class="section-grupos">
+    <div class="container">
+      <h2>Grupos</h2>
+
+      <div id="grupos-list" class="grupos-list" aria-live="polite">
+        <!-- JS injeta 3 grupos por página aqui -->
+      </div>
+
+      <div class="pagination">
+        <button id="btn-prev-grupos" class="page-btn" aria-label="Página anterior" disabled>
+          <img src="assets/images/icons/fi_chevron-left.png" alt="" />
+        </button>
+        <button id="btn-next-grupos" class="page-btn" aria-label="Próxima página">
+          <img src="assets/images/icons/fi_chevron-right.png" alt="" />
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 SECTION-PROXIMOS-JOGOS -->
+  <section id="partidas" class="section-jogos">
+    <div class="container">
+      <h2>Próximos jogos</h2>
+
+      <div id="lista-jogos" class="lista-jogos" aria-live="polite">
+        <!-- JS injeta inicialmente 3 jogos, depois +5 a cada clique.
+             Cada card vem como <article class="jogo-detalhe box-spec">… -->
+      </div>
+
+      <div class="ver-mais-wrapper">
+        <button id="btn-ver-mais" class="btn-primario">Ver todos os jogos</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <nav class="footer-nav">
+        <div class="footer-col">
+          <h3>Redes sociais</h3>
+          <ul>
+            <li><a href="#" rel="noopener">Facebook</a></li>
+            <li><a href="#" rel="noopener">Instagram</a></li>
+            <li><a href="#" rel="noopener">Twitter</a></li>
+            <li><a href="#" rel="noopener">YouTube</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Legais</h3>
+          <ul>
+            <li><a href="#" rel="noopener">Sobre</a></li>
+            <li><a href="#" rel="noopener">Licença</a></li>
+            <li><a href="#" rel="noopener">Contato</a></li>
+            <li><a href="#" rel="noopener">Política de Privacidade</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>FIFA</h3>
+          <ul>
+            <li><a href="#" rel="noopener">Serviços</a></li>
+            <li><a href="#" rel="noopener">Patrocinadores</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="footer-bottom">
+        <img src="assets/images/footer-fifa.png" alt="footer fifa" />
+        <img src="assets/images/footer-qatar22.png" alt="footer qatar22" />        
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

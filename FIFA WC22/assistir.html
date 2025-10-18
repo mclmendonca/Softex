@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Assistir ao jogo – Qatar 2022</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body class="assistir-page">
+  <header class="header">
+    <div class="container header__container">
+      <a href="index.html" class="logo-fifa" aria-label="FIFA">
+        <img src="assets/images/logo-fifa.png" alt="FIFA" />
+      </a>
+      <nav class="menu-desktop">
+        <a href="index.html#inicio">Início</a>
+        <a href="index.html#grupos">Grupos</a>
+        <a href="index.html#partidas">Partidas</a>
+        <a href="assistir.html" class="active">Assistir</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="assistir">
+    <div class="container assistir__container" id="assistir-container">
+      <!-- JS popula com base nos parâmetros da URL -->
+      <div class="jogo-head" id="jogo-head">
+        <!-- times + bandeiras + data/hora -->
+      </div>
+
+      <div class="player-simulacao">
+        <div class="player-caixa">
+          <div class="player-tela">Transmissão ao vivo (simulação)</div>
+        </div>
+        <p class="player-info">Esta é uma simulação de player. Insira um iframe de streaming aqui se quiser.</p>
+      </div>
+
+      <a href="index.html#partidas" class="btn-secundario">← Voltar para os jogos</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom-only">
+      <div class="footer-bottom">
+        <span class="marca">FIFA</span>
+        <span class="creditos">Projeto educacional sem fins comerciais</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
