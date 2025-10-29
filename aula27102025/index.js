@@ -32,12 +32,12 @@ console.log("O que acontece se você deixar a vazio?",analyzeNumbers("",1))
 
 console.log("O que acontece se você passar uma letra no lugar de a ou b?",analyzeNumbers(5,"y"))
 
-console.log("E se a = 5 e b = 0?",analyzeNumbers(5,0))
+console.log("Qual é o valor inicial de c antes de chamar a função?",analyzeNumbers(5,0))
 
-console.log("E se a = 5 e b = 0?",analyzeNumbers(5,0))
+console.log("O valor de c muda após várias chamadas da função?",analyzeNumbers(5,0))
 
-console.log("E se a = 5 e b = 0?",analyzeNumbers(5,0))
+console.log("Escreva cinco casos de teste diferentes que cubram todas as possibilidades.",analyzeNumbers(5,0))
 
-
+console.log("O que aconteceria se a e b fossem negativos?",analyzeNumbers(5,0))
 
 
